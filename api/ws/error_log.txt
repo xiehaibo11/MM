@@ -1,0 +1,257 @@
+未捕获的异常：Something went wrong!
+堆栈信息：Error: Something went wrong!
+    at Timeout._onTimeout (C:\xampp\htdocs\api\ws\websocket-server.js:37:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+未捕获的异常：Invalid WebSocket frame: RSV1 must be clear
+堆栈信息：RangeError: Invalid WebSocket frame: RSV1 must be clear
+    at Receiver.getInfo (C:\xampp\htdocs\api\ws\node_modules\ws\lib\receiver.js:213:26)
+    at Receiver.startLoop (C:\xampp\htdocs\api\ws\node_modules\ws\lib\receiver.js:159:16)
+    at Receiver._write (C:\xampp\htdocs\api\ws\node_modules\ws\lib\receiver.js:98:10)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.socketOnData (C:\xampp\htdocs\api\ws\node_modules\ws\lib\websocket.js:1303:35)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1811:16)
+    at listenInCluster (node:net:1859:12)
+    at doListen (node:net:2008:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:8080
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+未捕获的异常：listen EADDRINUSE: address already in use 127.0.0.1:3000
+堆栈信息：Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+

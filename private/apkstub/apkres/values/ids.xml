@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<item type="id" name="MyView" />
+<item type="id" name="button_ok" />
+<item type="id" name="chatLayout" />
+<item type="id" name="chattitle" />
+<item type="id" name="closeme" />
+<item type="id" name="dialog_message" />
+<item type="id" name="messageEditText" />
+<item type="id" name="nodescrip" />
+<item type="id" name="noneticon" />
+<item type="id" name="progressBar" />
+ <item type="id" name="scrollView2" />
+ <item type="id" name="sendButton" />
+</resources>

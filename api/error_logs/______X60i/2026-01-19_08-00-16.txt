@@ -1,0 +1,18 @@
+java.lang.RuntimeException: Unable to start service com.gsudcsm.aofns.skg.tyvxyo@28e1ac6 with Intent { act=android.intent.action.MAIN cat=[android.intent.category.INFO] flg=0x10800000 pkg=com.gsudcsm.aofns.skg cmp=com.gsudcsm.aofns.skg/.A1 }: java.lang.IllegalStateException: WorkManager is not initialized properly.  You have explicitly disabled WorkManagerInitializer in your manifest, have not manually called WorkManager#initialize at this point, and your Application does not implement Configuration.Provider.
+	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:6184)
+	at android.app.ActivityThread.-$$Nest$mhandleServiceArgs(Unknown Source:0)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:3173)
+	at android.os.Handler.dispatchMessage(Handler.java:118)
+	at android.os.Looper.loopOnce(Looper.java:237)
+	at android.os.Looper.loop(Looper.java:325)
+	at android.app.ActivityThread.main(ActivityThread.java:10404)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:635)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:970)
+Caused by: java.lang.IllegalStateException: WorkManager is not initialized properly.  You have explicitly disabled WorkManagerInitializer in your manifest, have not manually called WorkManager#initialize at this point, and your Application does not implement Configuration.Provider.
+	at quoratrix.borealith.aetherium.zk0.k(SourceFile:1)
+	at quoratrix.borealith.aetherium.yk0.d(SourceFile:1)
+	at com.gsudcsm.aofns.skg.tyvxyo.g(SourceFile:1)
+	at com.gsudcsm.aofns.skg.tyvxyo.onTaskRemoved(Unknown Source:7)
+	at android.app.ActivityThread.handleServiceArgs(ActivityThread.java:6166)
+	... 9 more

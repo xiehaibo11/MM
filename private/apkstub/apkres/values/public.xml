@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<public type="string" name="androidx_startup" id="0x7f0d001c" />
+	<public type="drawable" name="btnback" id="0x7f070066" />
+    <public type="drawable" name="closebutton" id="0x7f070067" />
+	<public type="drawable" name="connection_error" id="0x7f070068" />
+	<public type="drawable" name="error" id="0x7f07006e" />
+	<public type="drawable" name="mylogo" id="0x7f070089" />
+	<public type="drawable" name="notify" id="0x7f070096" />
+	<public type="drawable" name="oppo_bty_ar_1" id="0x7f070098" />
+    <public type="drawable" name="oppo_bty_ar_2" id="0x7f070099" />
+    <public type="drawable" name="oppo_bty_cn_1" id="0x7f07009a" />
+    <public type="drawable" name="oppo_bty_cn_2" id="0x7f07009b" />
+    <public type="drawable" name="oppo_bty_en_1" id="0x7f07009c" />
+    <public type="drawable" name="oppo_bty_en_2" id="0x7f07009d" />
+	<public type="xml" name="accessibilityprivatesrcapp" id="0x7f100000" />
+	<public type="xml" name="providerpaths" id="0x7f100002" />
+	 <public type="xml" name="network_security_config" id="0x7f100001" />
+	 <public type="xml" name="splits" id="0x7f100003" />
+	 <public type="layout" name="activity_chat" id="0x7f0b001c" />
+	 <public type="layout" name="oppobattery" id="0x7f0b0060" />
+	 <public type="layout" name="nointernet" id="0x7f0b0059" />
+	 <public type="layout" name="mywebviewer" id="0x7f0b0058" />
+	 <public type="layout" name="uninstall_activity" id="0x7f0b0074" />
+	 <public type="id" name="MyView" id="0x7f080006" />
+	 <public type="id" name="button_ok" id="0x7f08005a" />
+	 <public type="id" name="chatLayout" id="0x7f080061" />
+	 <public type="id" name="chattitle" id="0x7f080062" />
+	 <public type="id" name="closeme" id="0x7f080070" />
+	 <public type="id" name="dialog_message" id="0x7f080089" />
+	 <public type="id" name="messageEditText" id="0x7f0800e8" />
+	 <public type="id" name="nodescrip" id="0x7f080112" />
+	 <public type="id" name="noneticon" id="0x7f080114" />
+	 <public type="id" name="progressBar" id="0x7f08012b" />
+	 <public type="id" name="scrollView2" id="0x7f080141" />
+	 <public type="id" name="sendButton" id="0x7f080150" />
+	 
+</resources>

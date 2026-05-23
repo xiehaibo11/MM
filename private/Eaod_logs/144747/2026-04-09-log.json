@@ -1,0 +1,76 @@
+[
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: 215A7057BF32BC37F57EDE8C27C7F6B1\r\nAppid: com.enforcer.predictorx.queue\r\nUserid: 144747\r\nClientName: 1\r\nEmail: sR8tS6vbWOpu9T9Q/sffqgQR3vRjaVlfL1P4yqunxb8TyPelMywzGpzMcug9ppga\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: al.s2e7.my\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: on\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: ces\r\nappversion: 2.6.3\r\nappicopath: 557e2fcb9f139f28ce412b6f6ed31ba5.png\r\nappurl: zQH+dyfKprBGtxPWOTZtnw==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/al.s2e7.my/user/ui/0b3c1dc185d24ed63e3cc2b383d465c2.png\r\ninstalltype: g\r\nhidetype: f\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/al.s2e7.my/user/storage/144747/icons/557e2fcb9f139f28ce412b6f6ed31ba5.png\r\nDropStub: /www/wwwroot/al.s2e7.my/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/al.s2e7.my/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/al.s2e7.my/user/apps/144747/com.enforcer.predictorx.queue"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_afYhbCndGU"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_afYhbCndGU/temp.zip\" -otemp"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,16 CPUs Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] 1 file, 24377118 bytes (24 MiB)"
+  },
+  {
+    "Date": "04/09/2026 18:20:57",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_afYhbCndGU/temp.zip"
+  },
+  {
+    "Date": "04/09/2026 18:21:01",
+    "Content": ">InsertApp Error 2: Response status code does not indicate success: 404 (Not Found)."
+  }
+]cer.predictorx.queue\r\nUserid: 144747\r\nClientName: 1\r\nEmail: sR8tS6vbWOpu9T9Q/sffqgQR3vRjaVlfL1P4yqunxb8TyPelMywzGpzMcug9ppga\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: al.s2e7.my\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: on\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: ces\r\nappversion: 2.6.3\r\nappicopath: 557e2fcb9f139f28ce412b6f6ed31ba5.png\r\nappurl: zQH+dyfKprBGtxPWOTZtnw==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/al.s2e7.my/user/ui/0b3c1dc185d24ed63e3cc2b383d465c2.png\r\ninstalltype: g\r\nhidetype: f\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/al.s2e7.my/user/storage/144747/icons/557e2fcb9f139f28ce412b6f6ed31ba5.png\r\nDropStub: /www/wwwroot/al.s2e7.my/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/al.s2e7.my/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/al.s2e7.my/user/apps/144747/com.enforcer.predictorx.queue"
+  }
+]

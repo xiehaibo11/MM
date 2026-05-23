@@ -1,0 +1,18 @@
+version: 2.12.1
+apkFileName: apkstub.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 24
+  targetSdkVersion: 34
+packageInfo:
+  forcedPackageId: 127
+versionInfo:
+  versionCode: 331165
+  versionName: 3.31.165
+doNotCompress:
+- arsc
+- png
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm

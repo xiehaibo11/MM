@@ -1,0 +1,23 @@
+java.lang.IllegalArgumentException: reportSizeConfigurations: ActivityRecord not found for: Token{6991d8f ActivityRecord{35994ee u0 flefxzogbz.hgdlomgsu.nfqjimzd.cjaltv/net.stager.relayx.broadcaster.cihqpfxp t-1 f}}
+	at android.os.Parcel.createException(Parcel.java:1954)
+	at android.os.Parcel.readException(Parcel.java:1918)
+	at android.os.Parcel.readException(Parcel.java:1868)
+	at android.app.IActivityManager$Stub$Proxy.reportSizeConfigurations(IActivityManager.java:8735)
+	at android.app.ActivityThread.reportSizeConfigurations(ActivityThread.java:3138)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3097)
+	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)
+	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)
+	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1823)
+	at android.os.Handler.dispatchMessage(Handler.java:106)
+	at android.os.Looper.loop(Looper.java:193)
+	at android.app.ActivityThread.main(ActivityThread.java:6840)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
+Caused by: android.os.RemoteException: Remote stack trace:
+	at com.android.server.am.ActivityManagerService.reportSizeConfigurations(ActivityManagerService.java:8333)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:2875)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3309)
+	at android.os.Binder.execTransact(Binder.java:731)
+

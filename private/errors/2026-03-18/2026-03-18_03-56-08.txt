@@ -1,0 +1,7 @@
+Timestamp: 2026-03-18_03-56-08
+Error Message: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'com.randomizer.relayx.compiler' for key 'cstmappuniq'
+Stack Trace:
+#0 /www/wwwroot/bb.6upw.com/private/cb_custom.php(147): PDOStatement->execute()
+#1 /www/wwwroot/bb.6upw.com/private/cb_custom.php(79): UpdateDB()
+#2 {main}
+

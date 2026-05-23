@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="androidx_startup">androidx.startup</string>
+     <string name="BaseName">[BASE_NAME]</string>
+</resources>

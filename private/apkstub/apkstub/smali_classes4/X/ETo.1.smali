@@ -1,0 +1,82 @@
+.class public final LX/ETo;
+.super LX/FDb;
+.source ""
+
+
+# static fields
+.field public static final A00:LX/ETo;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, LX/ETo;
+
+    invoke-direct {v0}, LX/ETo;-><init>()V
+
+    sput-object v0, LX/ETo;->A00:LX/ETo;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 8
+
+    const/4 v1, 0x0
+
+    const/4 v5, 0x1
+
+    const/4 v7, 0x0
+
+    const v4, 0x7f123854
+
+    move-object v0, p0
+
+    move-object v2, v1
+
+    move-object v3, v1
+
+    move v6, v5
+
+    invoke-direct/range {v0 .. v7}, LX/FDb;-><init>(LX/Efy;Ljava/lang/String;Ljava/lang/String;IZZZ)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    const/4 v1, 0x1
+
+    if-eq p0, p1, :cond_0
+
+    instance-of v0, p1, LX/ETo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    return v1
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    const v0, -0xf354921
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Redo"
+
+    return-object v0
+.end method

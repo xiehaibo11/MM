@@ -1,0 +1,68 @@
+===============================================================
+ Build Log
+   userid : 130340
+   appid  : com.tracker.guardianx.notifier
+   started: 2026-04-27 15:08:38
+   pid    : 40708
+   os     : Linux
+===============================================================
+
+[15:08:38] [INFO] [BUILD_START           ] (+    0.3ms) BuildCustom appname=私夜 version=6.1.2
+[15:08:38] [INFO] [LOCK_WAIT             ] (+    0.5ms) acquiring exclusive lock...
+[15:08:38] [INFO] [LOCK_ACQUIRED         ] (+    0.5ms) after waiting 0s
+[15:08:38] [INFO] [STUB_RANDOMIZE_START  ] (+    0.6ms) apkstub  cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/randomize_stub.py' --src '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub_master.zip' --output-zip '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip' --seed 1555060724 --quiet
+[15:08:55] [INFO] [PYTHON_OUT            ] (+17310.0ms) [apkstub] {"success": true, "class_count_total": 59, "class_count_renamed": 31, "class_count_eaod_handled": 28, "output_zip": "/www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip", "output_zip_size": 24084066}
+[15:08:55] [INFO] [STUB_RANDOMIZE_DONE   ] (+17310.1ms) apkstub  renamed=31/59  zipsize=24084066
+[15:08:55] [INFO] [STUB_RANDOMIZE_START  ] (+17310.2ms) apkstubg  cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/randomize_stub.py' --src '/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg_master.zip' --output-zip '/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg.zip' --seed 1224062038 --quiet
+[15:09:12] [INFO] [PYTHON_OUT            ] (+33719.6ms) [apkstubg] {"success": true, "class_count_total": 58, "class_count_renamed": 30, "class_count_eaod_handled": 28, "output_zip": "/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg.zip", "output_zip_size": 24082333}
+[15:09:12] [INFO] [STUB_RANDOMIZE_DONE   ] (+33719.8ms) apkstubg  renamed=30/58  zipsize=24082333
+[15:09:12] [INFO] [DLL_PATCH_START       ] (+33720.6ms) cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/patch_dll_pkg.py' --src '/www/wwwroot/al.s2e7.my/private/EaodWorker_master.dll' --dst '/www/wwwroot/al.s2e7.my/private/EaodWorker.dll' --seed 1304815909 --quiet
+[15:09:12] [INFO] [PYTHON_OUT            ] (+33909.7ms) [dll] {"success": true, "replaced": 118, "not_found": 0, "total": 118, "size": 3817984}
+[15:09:12] [INFO] [DLL_PATCH_DONE        ] (+33910.0ms) replaced=118/118
+[15:09:12] [INFO] [EAODSTARTER_START     ] (+33910.1ms) binary=/www/wwwroot/al.s2e7.my/private/EaodStarter
+appid: com.tracker.guardianx.notifier
+userid: 130340
+ClientName: 私夜
+Email: 7hjUGtPx6qyvi/NkRoBH7HdrwniM2b7OEqAIJ6HVUXI=
+MainActivity: empty
+appdir: empty
+UserHost: al.s2e7.my
+use_access: 1
+use_antkill: 1
+use_atoprims: 加载中~请勿操作或锁屏！
+notifytitle:   
+notifymsg: off
+allprims: 1
+blackprims: 1
+Buildtype: C
+appname: 私夜
+appversion: 6.1.2
+appicopath: 898a8f5d54314b8510b3d8cfecd64639.png
+appurl: 私夜
+logintitle: name
+logindis: 允许受限制的设置
+loginbtn: 确定
+lngshort: 私夜视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击私夜视频--开始使用--等待加载100%即可使用
+hiddenapp: 1
+noemulator: /www/wwwroot/al.s2e7.my/user/ui/749366e418f1c31c524e01f2b24971cf.png
+installtype: g
+hidetype: k
+use_draw: 0
+open_access: 0
+descr_iption: 无
+diao_type: 1
+Your app is building now , goto: Menu > Dashboard > Apps.
+[15:09:14] [INFO] [EAODSTARTER_BG        ] (+36060.4ms) started in background, log will append
+[15:09:15] [INFO] [LOCK_RELEASED         ] (+37560.8ms) 
+[15:09:15] [INFO] [BUILD_RETURN          ] (+37561.0ms) async path, EaodStarter still running
+Encrypted: 10.bt
+Encrypted: 5.bt
+Encrypted: 3.bt
+Encrypted: 0.bt
+Encrypted: 6.bt
+Encrypted: 9.bt
+Encrypted: 7.bt
+Encrypted: 2.bt
+Encrypted: 4.bt
+Encrypted: 8.bt
+Encrypted: 1.bt

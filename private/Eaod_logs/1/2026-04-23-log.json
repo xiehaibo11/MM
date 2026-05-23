@@ -1,0 +1,342 @@
+[
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: 6164AC08FCB3FD904C95AFF390BC2C04\r\nAppid: org.validator.differentiator.authorizer\r\nUserid: 1\r\nClientName: 333\r\nEmail: YrIAU+Rfdz0JbXaf17JA6A==\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: al.s2e7.my\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: on\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 333\r\nappversion: 0.2.2\r\nappicopath: ba4509737c197e608559531dcaa20669.png\r\nappurl: b0A/ALh+FvF35+JE+8fjXQ==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/al.s2e7.my/user/ui/749366e418f1c31c524e01f2b24971cf.png\r\ninstalltype: g\r\nhidetype: f\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/al.s2e7.my/user/storage/1/icons/ba4509737c197e608559531dcaa20669.png\r\nDropStub: /www/wwwroot/al.s2e7.my/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/al.s2e7.my/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/al.s2e7.my/user/apps/1/org.validator.differentiator.authorizer"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_XGjRrFRLRN"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_XGjRrFRLRN/temp.zip\" -otemp"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,16 CPUs Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] 1 file, 24379009 bytes (24 MiB)"
+  },
+  {
+    "Date": "04/23/2026 16:51:10",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_XGjRrFRLRN/temp.zip"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] --"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Path = /tmp/Eaod_custom_XGjRrFRLRN/temp.zip"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Type = zip"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Physical Size = 24379009"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Everything is Ok"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": ">> Extract Finish.."
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Folders: 883"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Files: 23443"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Size:       116247667"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG-SHELL] Compressed: 24379009"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": ">> Check Permissions..."
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG] TheApkPath=/tmp/Eaod_custom_XGjRrFRLRN/temp"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG] Checking: /tmp/Eaod_custom_XGjRrFRLRN/temp/AndroidManifest.xml"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG] File.Exists=True"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG] AndroidManifest found, reading..."
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": "[DEBUG] Waiting strings.xml: /tmp/Eaod_custom_XGjRrFRLRN/temp/res/values/strings.xml exists=True"
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": ">> Encoding Strings file..."
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": ">> Change ico..."
+  },
+  {
+    "Date": "04/23/2026 16:51:44",
+    "Content": ">> Change blackui..."
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": "[DEBUG] Step2 permissions/strings/ico/blackui done"
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": ">> Coding AndroidManifest..."
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": "New apk PKG: com.clickmate.autotouch"
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": ">> Updating Res files..."
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": ">> Custom Step 3..."
+  },
+  {
+    "Date": "04/23/2026 16:51:45",
+    "Content": ">> Encryption..."
+  },
+  {
+    "Date": "04/23/2026 16:51:46",
+    "Content": ">> Encryption ALL..."
+  },
+  {
+    "Date": "04/23/2026 16:51:47",
+    "Content": ">> Skipping junk/shuffle (protection disabled)..."
+  },
+  {
+    "Date": "04/23/2026 16:51:47",
+    "Content": "Encrypt Assets:dskcjslql1"
+  },
+  {
+    "Date": "04/23/2026 16:51:48",
+    "Content": ">> Final placeholder sweep (all smali dirs)..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">> Sweep complete: 0 files patched."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">----------------->> Building Apk..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-CMD] java -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.maxXMLNameLimit=0 -jar /tmp/Eaod_custom_XGjRrFRLRN/apktool.jar b -f /tmp/Eaod_custom_XGjRrFRLRN/temp -o /tmp/Eaod_custom_XGjRrFRLRN/out/Ready.apk"
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] [Fatal Error] :2:69: JAXP00010005: The length of entity \"http://schemas.android.com/apk/res/android\" is \"42\" that exceeds the \"0\" limit set by \"system property\"."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": "[DEBUG-SHELL] I: Building resources with aapt2..."
+  },
+  {
+    "Date": "04/23/2026 16:51:49",
+    "Content": ">>  Building resources with aapt2..."
+  },
+  {
+    "Date": "04/23/2026 16:52:05",
+    "Content": "[DEBUG-SHELL] I: Building apk file..."
+  },
+  {
+    "Date": "04/23/2026 16:52:05",
+    "Content": ">>  Building apk file..."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": "[DEBUG-SHELL] I: Importing assets..."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": ">>  Importing assets..."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": "[DEBUG-SHELL] I: Importing unknown files..."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": ">>  Importing unknown files..."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": "[DEBUG-SHELL] I: Built apk into: /tmp/Eaod_custom_XGjRrFRLRN/out/Ready.apk"
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": ">>  Built apk into: /tmp/Eaod_custom_XGjRrFRLRN/out/Ready.apk"
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": ">Skip Protect (disabled).."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": ">> Zip Align.."
+  },
+  {
+    "Date": "04/23/2026 16:52:06",
+    "Content": "[DEBUG-CMD] zipalign 4 \"/tmp/Eaod_custom_XGjRrFRLRN/out/Ready_protected.apk\" \"/tmp/Eaod_custom_XGjRrFRLRN/out/Ready_zip.apk\""
+  },
+  {
+    "Date": "04/23/2026 16:52:11",
+    "Content": ">> Sign APK.."
+  },
+  {
+    "Date": "04/23/2026 16:52:11",
+    "Content": "[DEBUG-CMD] java -jar \"/tmp/Eaod_custom_XGjRrFRLRN/signapk.jar\" sign --key /tmp/Eaod_custom_XGjRrFRLRN/key.pk8 --cert /tmp/Eaod_custom_XGjRrFRLRN/certificate.pem  --v2-signing-enabled true --v3-signing-enabled false --out \"/tmp/Eaod_custom_XGjRrFRLRN/out/org.validator.differentiator.authorizer\" \"/tmp/Eaod_custom_XGjRrFRLRN/out/Ready_zip.apk\""
+  },
+  {
+    "Date": "04/23/2026 16:52:11",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/23/2026 16:52:16",
+    "Content": ">-----------Finished-------------\r\n> App: org.validator.differentiator.authorizer\r\n"
+  },
+  {
+    "Date": "04/23/2026 16:52:21",
+    "Content": "No Drooper needed..."
+  },
+  {
+    "Date": "04/23/2026 16:52:21",
+    "Content": "signoutput: /tmp/Eaod_custom_XGjRrFRLRN/out/org.validator.differentiator.authorizer"
+  },
+  {
+    "Date": "04/23/2026 16:52:21",
+    "Content": "userfolder: /www/wwwroot/al.s2e7.my/user/apps/1/org.validator.differentiator.authorizer/org.validator.differentiator.authorizer"
+  },
+  {
+    "Date": "04/23/2026 16:52:24",
+    "Content": "Cleanning..."
+  },
+  {
+    "Date": "04/23/2026 16:52:24",
+    "Content": "Cleanning WorkingDir..."
+  },
+  {
+    "Date": "04/23/2026 16:52:24",
+    "Content": ">UpdateState Error: Response status code does not indicate success: 404 (Not Found)."
+  },
+  {
+    "Date": "04/23/2026 16:52:25",
+    "Content": "singout (linux skip)"
+  }
+]

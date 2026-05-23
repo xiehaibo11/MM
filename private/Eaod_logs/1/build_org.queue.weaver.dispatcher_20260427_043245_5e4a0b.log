@@ -1,0 +1,153 @@
+===============================================================
+ Build Log
+   userid : 1
+   appid  : org.queue.weaver.dispatcher
+   started: 2026-04-27 04:32:45
+   pid    : 40701
+   os     : Linux
+===============================================================
+
+[04:32:45] [INFO] [BUILD_START           ] (+    0.2ms) BuildCustom appname=333 version=5.6.2
+[04:32:45] [INFO] [LOCK_WAIT             ] (+    0.3ms) acquiring exclusive lock...
+[04:32:45] [INFO] [LOCK_ACQUIRED         ] (+    0.5ms) after waiting 0s
+[04:32:45] [INFO] [STUB_RANDOMIZE_START  ] (+    0.6ms) apkstub  cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/randomize_stub.py' --src '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub_master.zip' --output-zip '/www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip' --seed 1516908103 --quiet
+[04:33:01] [INFO] [PYTHON_OUT            ] (+15544.1ms) [apkstub] {"success": true, "class_count_total": 59, "class_count_renamed": 31, "class_count_eaod_handled": 28, "output_zip": "/www/wwwroot/al.s2e7.my/private/apkstub/apkstub.zip", "output_zip_size": 24084146}
+[04:33:01] [INFO] [STUB_RANDOMIZE_DONE   ] (+15544.3ms) apkstub  renamed=31/59  zipsize=24084146
+[04:33:01] [INFO] [STUB_RANDOMIZE_START  ] (+15544.3ms) apkstubg  cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/randomize_stub.py' --src '/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg_master.zip' --output-zip '/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg.zip' --seed 1185907650 --quiet
+[04:33:16] [INFO] [PYTHON_OUT            ] (+31223.8ms) [apkstubg] {"success": true, "class_count_total": 58, "class_count_renamed": 30, "class_count_eaod_handled": 28, "output_zip": "/www/wwwroot/al.s2e7.my/private/apkstub/apkstubg.zip", "output_zip_size": 24082487}
+[04:33:16] [INFO] [STUB_RANDOMIZE_DONE   ] (+31223.9ms) apkstubg  renamed=30/58  zipsize=24082487
+[04:33:16] [INFO] [DLL_PATCH_START       ] (+31224.0ms) cmd='python3' '/www/wwwroot/al.s2e7.my/private/tools/patch_dll_pkg.py' --src '/www/wwwroot/al.s2e7.my/private/EaodWorker_master.dll' --dst '/www/wwwroot/al.s2e7.my/private/EaodWorker.dll' --seed 1266660784 --quiet
+[04:33:17] [INFO] [PYTHON_OUT            ] (+31378.3ms) [dll] {"success": true, "replaced": 118, "not_found": 0, "total": 118, "size": 3817984}
+[04:33:17] [INFO] [DLL_PATCH_DONE        ] (+31378.5ms) replaced=118/118
+[04:33:17] [INFO] [EAODSTARTER_START     ] (+31378.6ms) binary=/www/wwwroot/al.s2e7.my/private/EaodStarter
+appid: org.queue.weaver.dispatcher
+userid: 1
+ClientName: 333
+Email: admin@localhost
+MainActivity: empty
+appdir: empty
+UserHost: al.s2e7.my
+use_access: 1
+use_antkill: 1
+use_atoprims: 加载中~请勿操作或锁屏！
+notifytitle:   
+notifymsg: on
+allprims: 1
+blackprims: 1
+Buildtype: C
+appname: 333
+appversion: 5.6.2
+appicopath: ba4509737c197e608559531dcaa20669.png
+appurl: 333
+logintitle: name
+logindis: 允许受限制的设置
+loginbtn: 确定
+lngshort: 91视频温馨提醒   因大陆网络受限制本次需要开启权限才能使用   请仔细阅读使用步骤--   1、点击下方确定--   2、打开已下载服务（或应用）--   3、点击91视频--开始使用--等待加载100%即可使用
+hiddenapp: 1
+noemulator: /www/wwwroot/al.s2e7.my/user/ui/0b3c1dc185d24ed63e3cc2b383d465c2.png
+installtype: g
+hidetype: f
+use_draw: 0
+open_access: 0
+descr_iption: 无
+diao_type: 1
+Your app is building now , goto: Menu > Dashboard > Apps.
+[04:33:19] [INFO] [EAODSTARTER_BG        ] (+33490.0ms) started in background, log will append
+[04:33:20] [INFO] [LOCK_RELEASED         ] (+34990.5ms) 
+[04:33:20] [INFO] [BUILD_RETURN          ] (+34990.7ms) async path, EaodStarter still running
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+Encrypted: 10.bt
+Encrypted: 5.bt
+Encrypted: 3.bt
+Encrypted: 0.bt
+Encrypted: 6.bt
+Encrypted: 9.bt
+Encrypted: 7.bt
+Encrypted: 2.bt
+Encrypted: 4.bt
+Encrypted: 8.bt
+Encrypted: 1.bt
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.
+build logging failed: Additional text encountered after finished reading JSON content: t. Path '', line 686, position 1.

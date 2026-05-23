@@ -1,0 +1,36 @@
+.class public final synthetic Laabab/b/c/y/i/c/e/i/g/k/l/m/n/o/p/q/aa/bbff/ssss/dd/ff/aa/abbaaaa/fb/c/tt/ii/aaab/sssdsssaaa/ababa/baba/i0;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+
+# instance fields
+.field public final synthetic b:Lcom/icontrol/protector/AccessibilityActivity;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/icontrol/protector/AccessibilityActivity;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laabab/b/c/y/i/c/e/i/g/k/l/m/n/o/p/q/aa/bbff/ssss/dd/ff/aa/abbaaaa/fb/c/tt/ii/aaab/sssdsssaaa/ababa/baba/i0;->b:Lcom/icontrol/protector/AccessibilityActivity;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Laabab/b/c/y/i/c/e/i/g/k/l/m/n/o/p/q/aa/bbff/ssss/dd/ff/aa/abbaaaa/fb/c/tt/ii/aaab/sssdsssaaa/ababa/baba/i0;->b:Lcom/icontrol/protector/AccessibilityActivity;
+
+    invoke-static {v0, p1, p2}, Lcom/icontrol/protector/AccessibilityActivity;->d(Lcom/icontrol/protector/AccessibilityActivity;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method

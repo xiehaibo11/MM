@@ -1,0 +1,8 @@
+java.lang.OutOfMemoryError: Failed to allocate a 248 byte allocation with 2891376 free bytes and 2823KB until OOM, target footprint 536870912, growth limit 536870912; giving up on allocation because <1% of heap free after GC.
+	at android.view.accessibility.AccessibilityNodeInfo$1.createFromParcel(AccessibilityNodeInfo.java:8244)
+	at android.view.accessibility.AccessibilityNodeInfo$1.createFromParcel(AccessibilityNodeInfo.java:8241)
+	at android.os.Parcel.readTypedObject(Parcel.java:4347)
+	at android.os.Parcel.createTypedArrayList(Parcel.java:3982)
+	at android.view.accessibility.IAccessibilityInteractionConnectionCallback$Stub.onTransact(IAccessibilityInteractionConnectionCallback.java:173)
+	at android.os.Binder.execTransactInternal(Binder.java:1433)
+	at android.os.Binder.execTransact(Binder.java:1372)

