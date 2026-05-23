@@ -1,0 +1,21 @@
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+backend = auto
+maxretry = 3
+findtime = 10m
+bantime = 24h
+action = ufw
+
+[lingjie-security]
+enabled = true
+filter = lingjie-security
+logpath = /var/www/lingjie/private/security_audit/security-*.log
+          /var/www/lingjie/api/ws/ws_security_audit.log
+backend = auto
+maxretry = 8
+findtime = 10m
+bantime = 12h
+action = ufw

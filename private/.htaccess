@@ -1,0 +1,15 @@
+# 拒绝所有直接HTTP访问private目录
+Order Deny,Allow
+Deny from all
+
+# 以下文件允许通过PHP FastCGI执行（由Apache内部路由）
+<Files ~ "\.(php)$">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# 绝对拒绝JSON/TXT/LOG等敏感文件的直接访问
+<FilesMatch "\.(json|txt|log|sql|bak|old|sh|csv|ini)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>

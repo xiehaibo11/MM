@@ -1,0 +1,15 @@
+[mysqld]
+# MySQL production security overrides for Ubuntu
+# Suggested path: /etc/mysql/mysql.conf.d/99-lingjie-security.cnf
+
+# Do not expose MySQL to public network unless strictly required.
+bind-address = 127.0.0.1
+
+# Disable local infile to reduce file read/write abuse.
+local_infile = 0
+
+# Optional hardening.
+skip_name_resolve = ON
+
+# Keep this OFF unless you explicitly require it.
+log_bin_trust_function_creators = 0
