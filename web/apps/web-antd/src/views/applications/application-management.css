@@ -1,0 +1,277 @@
+.application-management .app-mod-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.application-management .app-mod-left-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: var(--component-background);
+  border: 1px solid var(--border-color-split);
+  border-radius: 8px;
+}
+
+.application-management .app-mod-nav-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 116px;
+  height: 44px;
+  padding: 0 18px;
+  color: var(--colorText);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.application-management .app-mod-nav-card:hover,
+.application-management .app-mod-nav-card.selected {
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.application-management .app-mod-nav-card span {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.application-management .app-mod-nav-card small {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0.72;
+}
+
+.application-management .app-mod-right-content,
+.application-management .app-mod-card {
+  width: 100%;
+}
+
+.application-management .app-mod-card-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.application-management .app-mod-card-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--colorText);
+}
+
+.application-management .download-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color-split);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.application-management .download-list-header {
+  display: grid;
+  grid-template-columns: 56px 1fr 1.5fr 120px 80px 200px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--colorTextSecondary);
+  background: var(--component-background);
+  border-bottom: 1px solid var(--border-color-split);
+}
+
+.application-management .download-list-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 1.5fr 120px 80px 200px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color-split);
+  transition: background 0.15s;
+}
+
+.application-management .download-list-row:last-child {
+  border-bottom: none;
+}
+
+.application-management .download-list-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.application-management .app-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.application-management .app-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--colorText);
+  white-space: nowrap;
+}
+
+.application-management .app-package,
+.application-management .app-date {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: var(--colorTextSecondary);
+  white-space: nowrap;
+}
+
+.application-management .app-gen-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.application-management .form-section {
+  padding: 16px 20px;
+  background: var(--component-background);
+  border: 1px solid var(--border-color-split);
+  border-radius: 8px;
+}
+
+.application-management .form-section h3 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--colorText);
+}
+
+.application-management .section-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.application-management .section-head h3 {
+  margin: 0;
+}
+
+.application-management .upload-hint {
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #ff4d4f;
+}
+
+.application-management .asset-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.application-management .asset-tile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.application-management .asset-tile:hover,
+.application-management .asset-tile.selected {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 12px rgb(22 119 255 / 24%);
+}
+
+.application-management .asset-tile img {
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--border-color-split);
+  border-radius: 6px;
+}
+
+.application-management .ui-tile,
+.application-management .ui-tile img {
+  width: 125px;
+  height: 125px;
+}
+
+.application-management .icon-tile,
+.application-management .icon-tile img {
+  width: 64px;
+  height: 64px;
+}
+
+.application-management .asset-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  width: 22px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0;
+  line-height: 20px;
+}
+
+.application-management .submit-bar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 24px;
+}
+
+.application-management .app-gen-submit-btn {
+  width: 280px;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .application-management .app-mod-left-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .application-management .app-mod-nav-card {
+    width: 100%;
+  }
+
+  .application-management .app-mod-card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .application-management .download-list-header {
+    display: none;
+  }
+
+  .application-management .download-list-row {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .application-management .download-list-row .col-icon {
+    grid-row: 1 / 3;
+  }
+
+  .application-management .download-list-row .col-package,
+  .application-management .download-list-row .col-date,
+  .application-management .download-list-row .col-state,
+  .application-management .download-list-row .col-actions {
+    grid-column: 1 / -1;
+  }
+}

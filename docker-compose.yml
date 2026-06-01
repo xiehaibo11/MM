@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mysql:8.0
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: testpass
+      MYSQL_DATABASE: clients
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ptestpass"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    platform: linux/amd64
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:mysql://db:3306/clients?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+      DB_USER: root
+      DB_PASSWORD: testpass
+      SERVER_PORT: "8000"
+      BUILDER_ENABLED: "true"
+      APP_BASE_PATH: /app/legacy
+      WS_DEVICE_AUTH_TOKEN: test-token
+      RATE_LIMIT_ENABLED: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - apk-output:/app/legacy/user/apps
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf 'http://localhost:8000/api/share.php?pkg=com.health.check' >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  apk-output:

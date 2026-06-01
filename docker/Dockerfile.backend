@@ -1,0 +1,30 @@
+FROM --platform=linux/amd64 eclipse-temurin:21-jre-noble
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgdiplus \
+    wget \
+    ca-certificates \
+    p7zip-full \
+    python3 \
+    libzopfli1 \
+    unzip \
+    openjdk-17-jre-headless \
+    && wget -q https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb \
+    && dpkg -i packages-microsoft-prod.deb \
+    && rm packages-microsoft-prod.deb \
+    && apt-get update && apt-get install -y --no-install-recommends dotnet-runtime-8.0 \
+    zipalign \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY backend-java/target/backend-java-0.0.1-SNAPSHOT.jar app.jar
+
+# EaodStarter + companion DLLs go into /app/legacy/private/
+COPY docker/eaod/ legacy/private/
+
+RUN chmod +x legacy/private/EaodStarter legacy/private/EaodWorker 2>/dev/null || true
+
+EXPOSE 8000
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

@@ -1,0 +1,108 @@
+# MM single-directory deployment — Nginx vhost.
+#
+# Layout matches deploy/dist/ produced by deploy/build.sh:
+#   /www/wwwroot/your-domain/
+#     ├─ index.html, assets/, app.config.js      (user SPA — served at /)
+#     ├─ admin/                                  (admin SPA — served at /admin)
+#     ├─ backend/backend.jar + .env              (Spring Boot, 127.0.0.1:8000)
+#     ├─ private/                                (APK builder, never served)
+#     ├─ user/                                   (user files — limited serve)
+#     └─ runtime/                                (backend logs, never served)
+#
+# Replace `your-domain` below with the real host. Replace the SSL block with
+# the lines that Bao Ta / certbot inject after issuing a certificate.
+
+server {
+    listen 80;
+    listen 443 ssl;
+    listen 443 quic;
+    http2 on;
+    server_name your-domain;
+    root /www/wwwroot/your-domain;
+    index index.html;
+
+    # ── SSL placeholder — replace with real cert paths ────────────────────────
+    # ssl_certificate     /www/server/panel/vhost/cert/your-domain/fullchain.pem;
+    # ssl_certificate_key /www/server/panel/vhost/cert/your-domain/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+
+    # ── Headers ───────────────────────────────────────────────────────────────
+    server_tokens off;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options DENY always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    client_max_body_size 32m;
+
+    # ── HTTP → HTTPS ──────────────────────────────────────────────────────────
+    if ($server_port = 80) {
+        return 301 https://$host$request_uri;
+    }
+
+    # ── Backend API ───────────────────────────────────────────────────────────
+    # WebSocket — must come before the general /api/ block (proxy_pass needs
+    # the upgrade headers).
+    location /api/ws {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+    }
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    # ── User files (mirrors legacy nginx caching rules) ───────────────────────
+    location ~ ^/user/storage/ { expires 7d; try_files $uri =404; }
+    location ~ ^/user/ui/      { expires 7d; try_files $uri =404; }
+    location ~ ^/user/apps/.*\.apk$ { expires 1d; try_files $uri =404; }
+    location ~* ^/user/        { deny all; return 404; }
+
+    # ── Block sensitive directories / files (legacy parity) ───────────────────
+    location ~* ^/(private|backend|runtime|configs|vendor|logs|scripts|deploy|node_modules)/ {
+        deny all; return 404;
+    }
+    location ~ /\. { deny all; return 404; }
+    location ~* \.(env|ini|log|sql|bak|sh|jar|yml|key|crt|pem|pk8)$ {
+        deny all; return 404;
+    }
+
+    # ── Admin SPA (subdirectory deployment) ───────────────────────────────────
+    location /admin/ {
+        try_files $uri $uri/ /admin/index.html;
+    }
+    # Exact /admin → /admin/
+    location = /admin { return 301 /admin/; }
+
+    # ── User SPA (root) ───────────────────────────────────────────────────────
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # ── Scanner deflection ────────────────────────────────────────────────────
+    location ~* ^/(wp-admin|wp-login|wp-content|wordpress|phpmyadmin|adminer) {
+        return 444;
+    }
+    if ($http_user_agent ~* (nmap|sqlmap|masscan|zgrab|censys|shodan)) {
+        return 444;
+    }
+
+    access_log /www/wwwlogs/your-domain.log;
+    error_log  /www/wwwlogs/your-domain.error.log;
+}

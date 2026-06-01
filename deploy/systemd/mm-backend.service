@@ -1,0 +1,27 @@
+[Unit]
+Description=MM Spring Boot backend
+After=network.target mysql.service mariadb.service
+Wants=mysql.service
+
+[Service]
+Type=simple
+User=www
+Group=www
+WorkingDirectory=/www/wwwroot/your-domain/backend
+EnvironmentFile=/www/wwwroot/your-domain/backend/.env
+ExecStart=/usr/bin/java -Xmx512m -jar /www/wwwroot/your-domain/backend/backend.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=5s
+StandardOutput=append:/www/wwwroot/your-domain/runtime/logs/backend.log
+StandardError=append:/www/wwwroot/your-domain/runtime/logs/backend.err.log
+LimitNOFILE=65536
+
+# Tighten filesystem access — keep this list in sync with APP_BASE_PATH usage.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/www/wwwroot/your-domain/user /www/wwwroot/your-domain/runtime
+
+[Install]
+WantedBy=multi-user.target

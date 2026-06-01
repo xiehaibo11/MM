@@ -1,0 +1,38 @@
+:root,
+.dark {
+  --accent-blue: #0061ff;
+  --accent-orange: #ff930f;
+  --accent-pink: #ff1b6b;
+  --accent-red: #ef4444;
+  --bg-0: hsl(var(--background));
+  --bg-1: hsl(var(--card));
+  --bg-2: hsl(var(--muted));
+  --border-soft: hsl(var(--border));
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  --text-0: hsl(var(--foreground));
+  --text-1: hsl(var(--foreground) / 86%);
+  --text-2: hsl(var(--muted-foreground));
+  --text-3: hsl(var(--foreground) / 48%);
+}
+
+.mm-page-content {
+  padding: 16px;
+}
+
+.mm-page-panel {
+  min-height: 100%;
+}
+
+.filter-bar {
+  border: 1px solid hsl(var(--border));
+}
+
+.ant-table-wrapper {
+  border-radius: 8px;
+}
+
+.ant-card {
+  border: 1px solid hsl(var(--border));
+}

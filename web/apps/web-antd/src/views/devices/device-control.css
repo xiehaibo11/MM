@@ -1,0 +1,402 @@
+.device-control-page {
+  --control-panel-bg: rgb(255 255 255 / 96%);
+  --control-panel-border: rgb(15 23 42 / 12%);
+  --control-surface-bg: rgb(248 250 252);
+  --control-screen-bg: #070a12;
+  --control-text: rgb(15 23 42);
+  --control-muted: rgb(71 85 105);
+  --control-soft: rgb(100 116 139);
+}
+
+.dark .device-control-page {
+  --control-panel-bg: rgb(255 255 255 / 4%);
+  --control-panel-border: rgb(255 255 255 / 12%);
+  --control-surface-bg: rgb(255 255 255 / 5%);
+  --control-screen-bg: #070a12;
+  --control-text: rgb(241 245 249);
+  --control-muted: rgb(203 213 225);
+  --control-soft: rgb(148 163 184);
+}
+
+.device-control-page .legacy-control-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.device-control-page .device-status-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px 12px;
+  background: var(--control-panel-bg);
+  border: 1px solid var(--control-panel-border);
+  border-radius: 8px;
+}
+
+.device-control-page .device-id {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+  color: var(--control-text);
+}
+
+.device-control-page .status-text {
+  font-size: 12px;
+  color: var(--control-muted);
+}
+
+.device-control-page .grow {
+  flex: 1;
+}
+
+.device-control-page .device-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+
+.device-control-page .summary-remark {
+  grid-column: span 2;
+}
+
+.device-control-page .summary-remark,
+.device-control-page .summary-chip {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  background: var(--control-panel-bg);
+  border: 1px solid var(--control-panel-border);
+  border-radius: 8px;
+}
+
+.device-control-page .summary-remark .ant-input {
+  min-width: 0;
+}
+
+.device-control-page .summary-label,
+.device-control-page .summary-chip span {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--control-muted);
+}
+
+.device-control-page .summary-chip {
+  justify-content: space-between;
+}
+
+.device-control-page .summary-chip strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--control-text);
+  white-space: nowrap;
+}
+
+.device-control-page .legacy-control-workbench {
+  display: flex;
+  gap: 40px;
+  align-items: start;
+  padding-bottom: 8px;
+  overflow-x: auto;
+}
+
+.device-control-page .legacy-main-panel,
+.device-control-page .screen-control-rail,
+.device-control-page .camera-control-rail {
+  background: var(--control-panel-bg);
+  border: 1px solid var(--control-panel-border);
+  border-radius: 8px;
+}
+
+.device-control-page .legacy-main-panel {
+  flex: 0 0 1000px;
+  min-width: 0;
+  padding: 8px 12px 12px;
+}
+
+.device-control-page .tabs-wrapper {
+  width: 1000px;
+}
+
+.device-control-page .image-box-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.device-control-page .image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 470px;
+}
+
+.device-control-page .legacy-tabs .ant-tabs-nav {
+  margin-bottom: 10px;
+}
+
+.device-control-page .legacy-tabs .ant-tabs-tab {
+  padding: 10px 12px;
+}
+
+.device-control-page .legacy-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 10px;
+}
+
+.device-control-page .toolbar-search {
+  width: min(240px, 100%);
+  margin-left: auto;
+}
+
+.device-control-page .camera-select {
+  width: 110px;
+}
+
+.device-control-page .media-stage,
+.device-control-page .screen-preview {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  background: var(--control-screen-bg);
+  border: 1px solid var(--control-panel-border);
+  border-radius: 8px;
+}
+
+.device-control-page .media-stage img,
+.device-control-page .screen-preview img {
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.device-control-page .image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  overflow: hidden;
+}
+
+.device-control-page .image-wrapper.with-sidebar {
+  width: auto;
+}
+
+.device-control-page .image-slot {
+  width: 350px;
+}
+
+.device-control-page .screenlayers {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  cursor: crosshair;
+  user-select: none;
+  background: var(--control-screen-bg);
+}
+
+.device-control-page .screenlayers img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.device-control-page .screen-empty {
+  width: 100%;
+  min-height: 560px;
+  background: var(--control-screen-bg);
+}
+
+.device-control-page .mousecanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.device-control-page .app-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.device-control-page .event-stream {
+  padding-top: 10px;
+  margin-top: 12px;
+  border-top: 1px solid var(--control-panel-border);
+}
+
+.device-control-page .event-head {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--control-muted);
+}
+
+.device-control-page .event-empty {
+  font-size: 12px;
+  color: var(--control-soft);
+}
+
+.device-control-page .event-stream ul {
+  max-height: 150px;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.device-control-page .event-stream li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 5px 0;
+  font-size: 12px;
+  border-bottom: 1px dashed var(--control-panel-border);
+}
+
+.device-control-page .event-stream li > span {
+  flex-shrink: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--control-soft);
+}
+
+.device-control-page .event-stream code {
+  color: var(--control-text);
+  overflow-wrap: anywhere;
+  background: transparent;
+}
+
+.device-control-page .screen-control-rail,
+.device-control-page .camera-control-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px;
+}
+
+.device-control-page .button-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.device-control-page .screen-toggle-bar {
+  align-items: center;
+}
+
+.device-control-page .inner-sidebar,
+.device-control-page .rail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 120px;
+  padding: 10px 5px;
+  background: #000;
+}
+
+.device-control-page .rail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  width: 100%;
+}
+
+.device-control-page .rail-row .ant-btn,
+.device-control-page .nav-row .ant-btn,
+.device-control-page .rail-input-actions .ant-btn {
+  min-width: 0;
+  height: 30px;
+  padding-inline: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.device-control-page .nav-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.device-control-page .rail-input-actions {
+  display: grid;
+  gap: 6px;
+}
+
+.device-control-page .screen-control-rail .rail-input-actions,
+.device-control-page .camera-control-rail .rail-input-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.device-control-page .quick-action-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.device-control-page .quick-action-grid .ant-btn {
+  min-width: 0;
+  height: 28px;
+  padding-inline: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .device-control-page .device-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .device-control-page .summary-remark {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .device-control-page .device-status-strip,
+  .device-control-page .legacy-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .device-control-page .device-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .device-control-page .toolbar-search {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .device-control-page .quick-action-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

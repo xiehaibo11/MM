@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+target/
+dist/
+.turbo/
+
+# Environment files
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime/temp
+.legacy-runtime/
+runtime/screenshots/
+
+# Cache
+.eslintcache
+.stylelintcache
+
+# Backup git dirs
+.git_backup/
+
+# Original reference (read-only)
+原版只查看不修改/
+
+# Docker EAOD build tool (large binary)
+docker/eaod/
+
+# Large archives
+*.tar.gz
+
+# Images at root (screenshots)
+*.png
+
+# Claude config
+.claude/
