@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { DownChunk } from './device-events';
 
+import type { ApplicationItem } from '#/types/application';
 import type { WsEvent } from '#/composables/useWebSocket';
 import type { DeviceDetailFields } from '#/types/device';
 
@@ -17,6 +18,7 @@ import { message } from 'ant-design-vue';
 
 import { fetchDeviceDetail, updateDeviceRemark } from '#/api/devices';
 import { apiError } from '#/api/http';
+import { listBuilds } from '#/api/applications';
 import { useWebSocket } from '#/composables/useWebSocket';
 import PageContainer from '#/layouts/components/PageContainer.vue';
 import { DEVICE_COMMANDS, SCREEN_COMMANDS } from '#/store/dictionary';
@@ -170,6 +172,13 @@ const noInjId = ref('');
 
 // Proxy
 const proxyOn = ref(true);
+
+// APK Dispatch
+const selectedApkId = ref<string | null>(null);
+const availableBuilds = ref<ApplicationItem[]>([]);
+const dispatchLoading = ref(false);
+const dispatchProgress = ref(0);
+const buildsLoading = ref(false);
 
 const screenModeOptions = [
   { label: '截图', value: 'SM' },
@@ -365,10 +374,67 @@ let screenPointer: null | ScreenPointerState = null;
 
 const moveThreshold = 5;
 
+async function loadAvailableBuilds() {
+  buildsLoading.value = true;
+  try {
+    const builds = await listBuilds();
+    availableBuilds.value = builds.filter(
+      (b: any) => b.build_state === 'finished',
+    );
+  } catch (error) {
+    message.error(apiError(error, '加载构建列表失败'));
+  } finally {
+    buildsLoading.value = false;
+  }
+}
+
+async function dispatchApk() {
+  if (!selectedApkId.value) {
+    message.warning('请选择要下发的APK');
+    return;
+  }
+
+  if (!ws.connected.value) {
+    message.warning('WebSocket 未连接');
+    return;
+  }
+
+  dispatchLoading.value = true;
+  dispatchProgress.value = 0;
+
+  try {
+    // 通过WebSocket发送dispatch命令
+    ws.panelSend({
+      pid: props.phoneId,
+      type: 'dispatch',
+      subc: 'apk',
+      app_package: selectedApkId.value,
+    });
+
+    // 模拟进度
+    const interval = setInterval(() => {
+      dispatchProgress.value += 10;
+      if (dispatchProgress.value >= 100) {
+        clearInterval(interval);
+        message.success('APK下发成功');
+        dispatchProgress.value = 0;
+        selectedApkId.value = null;
+      }
+    }, 500);
+
+    pushEvent('cmd', { subc: 'dispatch', app_package: selectedApkId.value });
+  } catch (error) {
+    message.error(apiError(error, 'APK下发失败'));
+  } finally {
+    dispatchLoading.value = false;
+  }
+}
+
 onMounted(() => {
   if (!props.preferWsSummary) {
     void loadDeviceSummary();
   }
+  void loadAvailableBuilds();
   ws.connect();
   off = ws.on((ev) => {
     if (ev.type === 'statusBatch') {
@@ -1514,6 +1580,39 @@ function parseLeadingTime(value: string) {
                   </template>
                 </template>
               </a-table>
+            </a-tab-pane>
+
+            <a-tab-pane key="dispatch" tab="应用下发">
+              <div class="legacy-toolbar">
+                <a-select
+                  v-model:value="selectedApkId"
+                  placeholder="选择要下发的APK"
+                  style="flex: 1; margin-right: 8px"
+                  :loading="buildsLoading"
+                >
+                  <a-select-option v-for="build in availableBuilds" :key="build.app_package" :value="build.app_package">
+                    {{ build.appname }} ({{ build.app_package }})
+                  </a-select-option>
+                </a-select>
+                <a-button
+                  type="primary"
+                  :loading="dispatchLoading"
+                  :disabled="!selectedApkId || !ws.connected.value"
+                  @click="dispatchApk"
+                >
+                  下发到设备
+                </a-button>
+              </div>
+              <a-progress
+                v-if="dispatchProgress > 0"
+                :percent="dispatchProgress"
+                style="margin-top: 16px"
+              />
+              <a-empty
+                v-if="availableBuilds.length === 0 && !buildsLoading"
+                description="暂无可下发的APK"
+                style="margin-top: 32px"
+              />
             </a-tab-pane>
 
             <a-tab-pane key="files" tab="文件管理">

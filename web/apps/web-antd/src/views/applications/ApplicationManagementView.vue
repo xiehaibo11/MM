@@ -34,12 +34,14 @@ import { apiError } from '#/api/http';
 import PageContainer from '#/layouts/components/PageContainer.vue';
 
 import { createApplicationBuildForm } from './application-form';
+import BuildManagementPanel from './BuildManagementPanel.vue';
 
 import './application-management.css';
 
 const navItems = [
   { desc: '下载', key: 'download', name: '应用下载' },
   { desc: '生成', key: 'build', name: '应用生成' },
+  { desc: '管理', key: 'buildmgmt', name: '构建管理' },
 ] as const;
 
 const apps = ref<ApplicationItem[]>([]);
@@ -405,7 +407,7 @@ async function onBuild() {
             </div>
           </a-spin>
 
-          <a-spin v-else :spinning="assetLoading">
+          <a-spin v-else-if="activeTab === 'build'" :spinning="assetLoading">
             <a-form layout="vertical" class="app-gen-form">
               <section class="form-section outer-form-item">
                 <h3>上线名称</h3>
@@ -738,6 +740,10 @@ async function onBuild() {
                 </a-button>
               </div>
             </a-form>
+          </a-spin>
+
+          <a-spin v-else-if="activeTab === 'buildmgmt'" :spinning="loading">
+            <BuildManagementPanel />
           </a-spin>
         </div>
       </section>

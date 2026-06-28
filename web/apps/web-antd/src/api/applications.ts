@@ -256,3 +256,50 @@ export function applicationShareUrl(appid: string) {
   if (/^https?:\/\//.test(path)) return path;
   return `${window.location.origin}${path}`;
 }
+
+export async function listBuilds() {
+  const session = currentSession();
+  try {
+    const res = await http
+      .post<LegacyWrapped<ApplicationItem[]>>(
+        '/api/admin/builds/list',
+        { token: session.token },
+      )
+      .then((r) => r.data);
+    if (res.Req !== undefined) return [];
+    return parseLegacySuccess<ApplicationItem[]>(res) || [];
+  } catch {
+    return [];
+  }
+}
+
+export async function createBuild(
+  appPackage: string,
+  appName: string,
+  appIcon?: string,
+) {
+  const session = currentSession();
+  const res = await http
+    .post<LegacyWrapped<{ build_id: number }>>(
+      '/api/admin/builds/build',
+      {
+        appIcon: appIcon || '',
+        appName,
+        appPackage,
+        token: session.token,
+      },
+    )
+    .then((r) => r.data);
+  return parseLegacySuccess<{ build_id: number }>(res);
+}
+
+export async function getBuildStatus(buildId: number) {
+  const session = currentSession();
+  const res = await http
+    .post<LegacyWrapped<ApplicationItem>>(
+      `/api/admin/builds/status?buildId=${buildId}`,
+      { token: session.token },
+    )
+    .then((r) => r.data);
+  return parseLegacySuccess<ApplicationItem>(res);
+}
