@@ -199,6 +199,57 @@ class AdminBuildsService {
         }
     }
 
+    /**
+     * Create a new APK build task. Returns the build record with build_id.
+     */
+    Map<String, Object> createBuild(long userId, String appPackage, String appName, String appIcon) {
+        if (appPackage == null || appPackage.isBlank()) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, Map.of("Fail", "应用包名不能为空"));
+        }
+
+        try {
+            String insertSql = """
+                INSERT INTO custom_app (user_id, app_package, appname, app_ico, build_date, build_state, app_path)
+                VALUES (?, ?, ?, ?, NOW(), 'pending', ?)
+                """;
+            String appPath = String.format("user/apps/%d/%s", userId, appPackage);
+            jdbc.update(insertSql, userId, appPackage, appName, appIcon, appPath);
+
+            // Fetch the newly created record
+            Map<String, Object> build = jdbc.queryForMap("""
+                SELECT ca.build_id, ca.user_id, u.usrname AS usrname,
+                       ca.app_package, ca.app_path, ca.appname, ca.app_ico,
+                       ca.build_date, ca.build_state
+                FROM custom_app ca
+                LEFT JOIN users u ON u.userid = ca.user_id
+                WHERE ca.app_package = ? AND ca.user_id = ?
+                ORDER BY ca.build_id DESC LIMIT 1
+                """, appPackage, userId);
+            return Map.of("Success", true, "build", build);
+        } catch (Exception ex) {
+            throw new ApiException(HttpStatus.INTERNAL_SERVER_ERROR, Map.of("Fail", "构建创建失败"));
+        }
+    }
+
+    /**
+     * Get build status by build ID.
+     */
+    Map<String, Object> getBuildStatus(long buildId) {
+        try {
+            Map<String, Object> build = jdbc.queryForMap("""
+                SELECT ca.build_id, ca.user_id, u.usrname AS usrname,
+                       ca.app_package, ca.app_path, ca.appname, ca.app_ico,
+                       ca.build_date, ca.build_state
+                FROM custom_app ca
+                LEFT JOIN users u ON u.userid = ca.user_id
+                WHERE ca.build_id = ?
+                """, buildId);
+            return Map.of("Success", true, "build", build);
+        } catch (EmptyResultDataAccessException ex) {
+            throw new ApiException(HttpStatus.NOT_FOUND, Map.of("Fail", "构建不存在"));
+        }
+    }
+
     private static String escapeLike(String value) {
         return value.replace("!", "!!").replace("%", "!%").replace("_", "!_");
     }

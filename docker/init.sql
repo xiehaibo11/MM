@@ -217,6 +217,9 @@ CREATE TABLE `users` (
   `admin_remark` text DEFAULT NULL,
   `admin_token` text DEFAULT NULL,
   `admin_token_expiration` datetime DEFAULT NULL,
+  `role` varchar(20) DEFAULT 'user' COMMENT 'User role: user, admin, superadmin',
+  `permissions` json COMMENT 'Fine-grained permissions as JSON object',
+  `builder_quota` int(11) DEFAULT 5 COMMENT 'Maximum APK builds allowed per user',
   PRIMARY KEY (`userid`),
   UNIQUE KEY `userid` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=954471 DEFAULT CHARSET=utf8mb4;
@@ -281,6 +284,48 @@ CREATE TABLE IF NOT EXISTS `admin_action_logs` (
   `ip` varchar(64) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Table structure for table `apk_builds`
+--
+
+CREATE TABLE IF NOT EXISTS `apk_builds` (
+  `build_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `app_package` varchar(255) NOT NULL,
+  `app_name` varchar(100),
+  `app_icon` varchar(255),
+  `build_state` enum('pending','building','finished','failed') DEFAULT 'pending',
+  `build_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `download_url` varchar(500),
+  `error_message` text,
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`build_id`),
+  UNIQUE KEY `unique_user_package` (`user_id`, `app_package`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `apk_builds_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Table structure for table `device_permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `device_permissions` (
+  `perm_id` int(11) NOT NULL AUTO_INCREMENT,
+  `phone_id` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `permission_key` varchar(100) NOT NULL,
+  `granted` tinyint(1) DEFAULT 1,
+  `granted_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`perm_id`),
+  UNIQUE KEY `unique_device_user_perm` (`phone_id`, `user_id`, `permission_key`),
+  KEY `phone_id` (`phone_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `device_permissions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`),
+  CONSTRAINT `device_permissions_ibfk_2` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`phone_id`(255))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dump completed on 2026-03-20  3:28:27

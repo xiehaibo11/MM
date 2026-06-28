@@ -306,8 +306,11 @@ export function buildDisplay(display: string): DevicePayload {
 
 // ─── Open injection ──────────────────────────────────────────────────────
 
-export function buildOpenInjection(): DevicePayload {
-  return { type: 'screencomd', subc: 'OPENINJ' };
+export function buildOpenInjection(title?: string, message?: string): DevicePayload {
+  const payload: DevicePayload = { type: 'screencomd', subc: 'OPENINJ' };
+  if (title) payload.title = title;
+  if (message) payload.message = message;
+  return payload;
 }
 
 // ─── Uninstall app ───────────────────────────────────────────────────────

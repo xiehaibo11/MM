@@ -99,6 +99,7 @@ const cameraRunning = ref(false);
 const cameraLoading = ref(false);
 const cameraError = ref<string | null>(null);
 const cameraImage = ref<string | null>(null);
+let cameraTimeoutId: NodeJS.Timeout | null = null;
 const micRunning = ref(false);
 const audioLoading = ref(false);
 const audioCapturing = ref(false);
@@ -484,6 +485,11 @@ onMounted(() => {
       return;
     }
     panelState.value = reduceDeviceEvent(panelState.value, ev);
+    // 清除摄像头超时，如果接收到摄像数据
+    if (panelState.value.cameraImage && cameraTimeoutId !== null) {
+      clearTimeout(cameraTimeoutId);
+      cameraTimeoutId = null;
+    }
     pushEvent(String(ev.type || 'event'), ev);
   });
   startPanelStatusPolling();
@@ -892,6 +898,11 @@ function toggleCamera(on: boolean) {
     message.warning(cameraError.value);
     return;
   }
+  // 清除旧的摄像头超时
+  if (cameraTimeoutId !== null) {
+    clearTimeout(cameraTimeoutId);
+    cameraTimeoutId = null;
+  }
   cameraLoading.value = true;
   cameraError.value = null;
   try {
@@ -899,17 +910,13 @@ function toggleCamera(on: boolean) {
     sendCommand(on ? 'cam' : 'camoff');
     if (on) {
       // 设置超时，如果5秒内未收到数据则标记错误
-      const timeout = setTimeout(() => {
+      cameraTimeoutId = setTimeout(() => {
         if (!cameraImage.value) {
           cameraError.value = '获取摄像画面超时，请检查设备连接';
           message.warning(cameraError.value);
         }
+        cameraTimeoutId = null;
       }, 5000);
-      const originalOff = off;
-      off = () => {
-        clearTimeout(timeout);
-        originalOff?.();
-      };
     }
   } catch (error) {
     cameraError.value = `摄像监控错误: ${String(error)}`;
@@ -1175,7 +1182,7 @@ function sendPopup() {
       message.warning('WebSocket 未连接');
       return;
     }
-    const payload = P.buildOpenInjection();
+    const payload = P.buildOpenInjection(popupFormTitle.value.trim(), popupFormMessage.value.trim());
     ws.panelSend({ pid: props.phoneId, ...payload });
     pushEvent('cmd', {
       type: 'popup',

@@ -5,12 +5,14 @@ import java.util.Map;
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -19,17 +21,20 @@ class AdminApiController {
     private final TokenService tokenService;
     private final AdminService adminService;
     private final AdminAuditService auditService;
+    private final AdminBuildsService buildsService;
     private final RateLimiter rateLimiter;
 
     AdminApiController(
         TokenService tokenService,
         AdminService adminService,
         AdminAuditService auditService,
+        AdminBuildsService buildsService,
         RateLimiter rateLimiter
     ) {
         this.tokenService = tokenService;
         this.adminService = adminService;
         this.auditService = auditService;
+        this.buildsService = buildsService;
         this.rateLimiter = rateLimiter;
     }
 
@@ -162,6 +167,66 @@ class AdminApiController {
                 String.valueOf(RequestData.longValue(input, "userid", 0)), input, request);
         }
         return result;
+    }
+
+    // ─── Build management ──────────────────────────────────────────────
+    @PostMapping("/builds/list")
+    Map<String, Object> listBuilds(
+        @RequestParam(defaultValue = "1") int page,
+        @RequestParam(defaultValue = "20") int pageSize,
+        @RequestParam(value = "user_id", required = false) String userId,
+        @RequestParam(required = false) String pkg,
+        @RequestParam(required = false) String state,
+        HttpServletRequest request
+    ) {
+        rateLimiter.check(request, "admin_builds_list", 60, 60);
+        requireAdmin(request, null);
+        return buildsService.listBuilds(page, pageSize, userId, pkg, state);
+    }
+
+    @PostMapping("/builds/build")
+    Map<String, Object> createBuild(
+        @RequestBody(required = false) Map<String, Object> body,
+        HttpServletRequest request
+    ) {
+        rateLimiter.check(request, "admin_builds_create", 20, 60);
+        LegacyUser actor = requireAdmin(request, body);
+        Map<String, Object> input = safeBody(body);
+
+        String appPackage = RequestData.text(input, "app_package");
+        String appName = RequestData.text(input, "app_name");
+        String appIcon = RequestData.text(input, "app_icon");
+
+        if (appPackage.isBlank()) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, Map.of("Fail", "应用包名不能为空"));
+        }
+
+        Map<String, Object> result = buildsService.createBuild(actor.userid(), appPackage, appName, appIcon);
+        if (result.containsKey("Success")) {
+            auditService.recordAction(actor, "create_build", appPackage,
+                Map.of("app_package", appPackage, "app_name", appName), request);
+        }
+        return result;
+    }
+
+    @PostMapping("/builds/status")
+    Map<String, Object> getBuildStatus(
+        @RequestParam long buildId,
+        HttpServletRequest request
+    ) {
+        rateLimiter.check(request, "admin_builds_status", 60, 60);
+        requireAdmin(request, null);
+        return buildsService.getBuildStatus(buildId);
+    }
+
+    @GetMapping("/builds/download")
+    ResponseEntity<?> downloadBuild(
+        @RequestParam long buildId,
+        HttpServletRequest request
+    ) {
+        rateLimiter.check(request, "admin_builds_download", 30, 60);
+        requireAdmin(request, null);
+        return buildsService.download(buildId);
     }
 
     private static Map<String, Object> redactPassword(Map<String, Object> input) {
