@@ -15,6 +15,15 @@ import { $t } from '#/locales';
 
 const USER_ICON = '/favicon.ico';
 
+// Permission levels: higher number = more privileges
+const PERMISSION_LEVELS = {
+  user: 1,
+  admin: 2,
+  super_admin: 3,
+} as const;
+
+type PermissionLevel = keyof typeof PERMISSION_LEVELS;
+
 export const useAuthStore = defineStore('auth', () => {
   const accessStore = useAccessStore();
   const userStore = useUserStore();
@@ -23,6 +32,32 @@ export const useAuthStore = defineStore('auth', () => {
   const loginLoading = ref(false);
   const profile = computed(() => readProfile());
   const token = computed(() => accessStore.accessToken);
+
+  function getPermissionLevel(): PermissionLevel {
+    const p = readProfile();
+    if (!p) return 'user';
+
+    // Check if user is admin based on authorty field
+    if (p.authorty === 'admin') return 'super_admin';
+    return 'user';
+  }
+
+  function hasPermission(requiredLevel: PermissionLevel): boolean {
+    const currentLevel = getPermissionLevel();
+    return PERMISSION_LEVELS[currentLevel] >= PERMISSION_LEVELS[requiredLevel];
+  }
+
+  function canControlDevice(): boolean {
+    return hasPermission('super_admin');
+  }
+
+  function canBuildApk(): boolean {
+    return hasPermission('super_admin');
+  }
+
+  function canManageAccounts(): boolean {
+    return hasPermission('super_admin');
+  }
 
   function toUserInfo(
     p = readProfile(),
@@ -179,7 +214,12 @@ export const useAuthStore = defineStore('auth', () => {
   return {
     $reset,
     authLogin,
+    canBuildApk,
+    canControlDevice,
+    canManageAccounts,
     fetchUserInfo,
+    getPermissionLevel,
+    hasPermission,
     hydrateSession,
     loginLoading,
     logout,

