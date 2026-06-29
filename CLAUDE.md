@@ -78,6 +78,116 @@ docker-compose down
 docker-compose logs -f backend
 ```
 
+## Production Server Access
+
+### SSH Connection to Server
+
+```bash
+# Connect via SSH (port 23798)
+ssh -p 23798 root@102.204.223.50
+
+# Or with key file
+ssh -i ~/.ssh/key.pem -p 23798 root@102.204.223.50
+```
+
+**Server Details:**
+- Host: `102.204.223.50`
+- Port: `23798` (SSH)
+- User: `root`
+- Project directory: `/root/MM`
+
+### Web Application Access
+
+| Service | URL | Credentials |
+|---------|-----|-------------|
+| **User Frontend** | https://bocail.com | admin / admin123 |
+| **Admin Console** | https://bocail.com/admin | admin / admin123 (+ gate key: `mm2026admin`) |
+| **Backend API** | https://bocail.com/api/* | JWT token (from login) |
+
+### Docker Services on Server
+
+```bash
+# SSH into server, then:
+
+# View running services
+docker-compose ps
+
+# View logs
+docker-compose logs -f backend      # Backend logs
+docker-compose logs -f db           # Database logs
+
+# Restart services
+docker-compose restart backend
+docker-compose restart db
+
+# Full restart (remove volumes)
+docker-compose down -v
+docker-compose up -d
+```
+
+### Important Service Ports
+
+| Service | Internal Port | External (via Docker) | Access Method |
+|---------|---------------|----------------------|----------------|
+| **Frontend** | 80/443 | Nginx proxy | https://bocail.com |
+| **Admin Console** | 80/443 | Nginx proxy | https://bocail.com/admin |
+| **Backend API** | 8000 | 8000 (host:container) | http://localhost:8000/api/* (from server) |
+| **MySQL** | 3306 | 3307 (host:container) | mysql -h 127.0.0.1 -P 3307 -u root -p |
+
+### Database Access from Server
+
+```bash
+# Connect to MySQL from server
+mysql -h 127.0.0.1 -P 3307 -u root -p
+
+# Password: testpass
+# Database: clients
+```
+
+### Files Structure on Server
+
+```
+/root/MM/
+├── .env                      # Environment config (DB credentials, API keys)
+├── docker-compose.yml        # Service orchestration
+├── backend-java/
+│   └── target/backend-java-0.0.1-SNAPSHOT.jar  # Compiled backend
+├── docker/
+│   ├── init.sql             # Database initialization script
+│   ├── eaod/                # APK build tools (EaodStarter, EaodWorker)
+│   └── Dockerfile.backend   # Backend container image
+├── backend.log              # Backend application logs
+└── runtime/                 # Generated APK output directory
+```
+
+### Troubleshooting
+
+**502 Bad Gateway Error:**
+```bash
+# Check if backend is running
+docker-compose ps | grep backend
+
+# View backend logs
+docker-compose logs backend | tail -50
+
+# Restart backend if needed
+docker-compose restart backend
+```
+
+**Database Connection Errors:**
+```bash
+# Check database status
+docker-compose logs db | tail -30
+
+# Verify connection
+mysql -h 127.0.0.1 -P 3307 -u root -p -e "SELECT 1"
+```
+
+**View Nginx Configuration:**
+```bash
+cat /etc/nginx/sites-available/bocail.com
+```
+
 ## Architecture
 
 ### High-level system design
