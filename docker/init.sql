@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS `phones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `phones` (
-  `phone_id` text NOT NULL,
+  `phone_id` varchar(255) NOT NULL,
   `usrname` varchar(50) NOT NULL,
   `phone_name` varchar(20) NOT NULL,
   `country` text NOT NULL,
@@ -104,9 +104,9 @@ CREATE TABLE `phones` (
   `isRemoved` tinyint(1) NOT NULL DEFAULT '0',
   `phoneopen` tinyint(1) NOT NULL DEFAULT '1',
   `accessibility` varchar(10) DEFAULT '0',
-  PRIMARY KEY (`phone_id`(255)),
-  UNIQUE KEY `unique_phone_id` (`phone_id`(255)),
-  UNIQUE KEY `phone_id` (`phone_id`(255))
+  PRIMARY KEY (`phone_id`),
+  UNIQUE KEY `unique_phone_id` (`phone_id`),
+  UNIQUE KEY `phone_id` (`phone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -325,7 +325,7 @@ CREATE TABLE IF NOT EXISTS `device_permissions` (
   KEY `phone_id` (`phone_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `device_permissions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`),
-  CONSTRAINT `device_permissions_ibfk_2` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`phone_id`(255))
+  CONSTRAINT `device_permissions_ibfk_2` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`phone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Dump completed on 2026-03-20  3:28:27
